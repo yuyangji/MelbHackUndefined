@@ -1,10 +1,12 @@
 import React from "react";
 import JourneyCard from "./JourneyCard";
 
-const JourneyCardList = () => {
+const JourneyCardList = ({ journeyList, savedList }) => {
   return (
     <>
-      <JourneyCard />
+      {journeyList.map((journey, index) => (
+        <JourneyCard key={index} journey={journey} savedList={savedList} />
+      ))}
     </>
   );
 };

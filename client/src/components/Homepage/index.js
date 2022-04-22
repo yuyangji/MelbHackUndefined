@@ -2,11 +2,13 @@ import React, { useState } from "react";
 import Header from "../shared/Header";
 import JourneyCardList from "../shared/JourneyCardList";
 import LoggedHeader from "../shared/LoggedHeader";
+import journeyList from "../../dummyJourney.json";
+import userData from "../../dummyUser.json";
 
 const Homepage = () => {
   // Global variables passing around
   const [isLoggedIn, setLogged] = useState(false);
-  const [username, setUsername] = useState("john_smith_123");
+  const [username, setUsername] = useState(userData.username);
 
   return (
     <>
@@ -26,7 +28,11 @@ const Homepage = () => {
           }}
         >
           <div>
-            <JourneyCardList style={{ display: "block" }} />
+            <JourneyCardList
+              style={{ display: "block" }}
+              journeyList={journeyList}
+              savedList={userData.saved_journey}
+            />
           </div>
         </div>
       </div>
