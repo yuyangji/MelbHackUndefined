@@ -10,7 +10,7 @@ POST http://localhost:3000/journey
 Content-Type: application/json
 
 {
-    "title":"c#",
+    "title":"dd#",
     "milestones": [
         {
             "step_no" : 1,
@@ -42,14 +42,6 @@ Content-Type: application/json
     "password": "dummypsw"
 }
 
-
-###
-GET http://localhost:3000/auth/login
-Content-Type: application/json
-
-{
-    "username":"dummyuer2"
-}
 
 ###
 

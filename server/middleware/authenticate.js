@@ -3,15 +3,16 @@ const User = require('../models/user')
 
 const authenticate = (req, res, next) => {
     let token = req.session.token;
-
+ 
   if (!token) {
     return res.status(403).send("A token is required for authentication");
   }
   try {
 
     const decode = jwt.verify(token, process.env.TOKEN_KEY);
-
     req.user = decode;
+    
+
   } catch (err) {
     res.status(401).json({ message: "invalid token" });
   }
@@ -34,4 +35,6 @@ const checkDuplicateUsername = (req, res, next) => {
       });
 }
 
-module.exports = authenticate;
+module.exports = {
+    authenticate
+}
