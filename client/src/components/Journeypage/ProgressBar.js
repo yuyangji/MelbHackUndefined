@@ -33,7 +33,7 @@ const ProgressBar = ({ data, setData }) => {
               <Button
                 key={item.id}
                 ref={selectedProgress}
-                variantColor="green"
+                variantcolor="green"
                 onClick={() => {
                   // item.id === data.length
                   //   ? setProgress(100)
