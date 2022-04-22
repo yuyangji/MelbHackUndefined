@@ -7,7 +7,7 @@ import userData from "../../dummyUser.json";
 
 const Homepage = () => {
   // Global variables passing around
-  const [isLoggedIn, setLogged] = useState(false);
+  const [isLoggedIn, setLogged] = useState(true);
   const [username, setUsername] = useState(userData.username);
 
   return (
@@ -32,6 +32,7 @@ const Homepage = () => {
               style={{ display: "block" }}
               journeyList={journeyList}
               savedList={userData.saved_journey}
+              listTitle="All Journeys"
             />
           </div>
         </div>
