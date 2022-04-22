@@ -9,6 +9,7 @@ const journeySchema = new Schema({
     },
     author_id:{
         type:String,
+        required: true
       
     },
     milestones : [{

@@ -25,12 +25,10 @@ DELETE http://localhost:3000/journey/6262872f58bafe6867a8cb98
 
 ###
 PATCH http://localhost:3000/journey/6262830102a631c24979743c
-
 Content-Type: application/json
 
 {
-    "jwt": "sta;sdklfjsd",
-    "title":"rf dev"
+    "title":"rf dfdf"
 }
 // AUTHENTICATION
 ###
@@ -52,3 +50,7 @@ Content-Type: application/json
     "username":"dummyuser2",
     "password": "dummypsw"
 }
+
+###
+
+POST http://localhost:3000/auth/logout
