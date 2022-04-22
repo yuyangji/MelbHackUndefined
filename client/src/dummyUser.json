@@ -8,6 +8,7 @@
     {
       "journey_id": "000008",
       "progress": [0, 1]
-    }
+    },
+    { "journey_id": "000002", "progress": [] }
   ]
 }
