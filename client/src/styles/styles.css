@@ -113,25 +113,6 @@
   }
   
   /* Moved from styles -> css */
-  .progressContainer{
-    width: 100% !important;
-    position: relative !important;
-    display: flex !important;
-    align-items: center !important;
-  }
-  
-  .progress{
-    width: 100% !important;
-    z-index: 1 !important;
-    position: absolute !important;
-    transition: all 0.3s !important;
-  }
-  
-  .checkbox{
-    position: absolute !important;
-    left: 65% !important;
-    top: 6.8rem !important;
-  }
   
   
   
@@ -140,14 +121,5 @@
       width: 100%;
       flex-direction: column;
     }
-    
-    .checkbox{
-      left: 75% !important;
-    }
   }
   
-  @media (min-width: 601px) and (max-width: 1200px) {
-    .checkbox{
-      left: 75% !important;
-    }
-  }

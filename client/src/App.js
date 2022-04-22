@@ -2,7 +2,7 @@ import React from "react";
 import Homepage from "./components/Homepage";
 import Form from "./components/Formpage/Form";
 import ProgressBar from "./components/Journeypage/ProgressBar";
-
+import { ChakraProvider } from "@chakra-ui/react";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -38,13 +38,13 @@ function App() {
     },
   ]);
 
-
-
   return (
-  <div>
-  <ProgressBar data={data} setData={setData}/>;
-  </div>
-  )
+    <div>
+      <ChakraProvider>
+        <ProgressBar data={data} setData={setData} />;
+      </ChakraProvider>
+    </div>
+  );
 }
 
 export default App;

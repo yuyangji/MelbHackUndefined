@@ -1,7 +1,7 @@
 import React from "react";
 import { Checkbox } from "@chakra-ui/react";
 import { useCheckbox } from "@chakra-ui/react";
-import styles from "../../styles/styles.css"
+import styles from "../../styles/Journey.module.css";
 
 const Card = ({ current, data, setData, setProgress }) => {
   let item = data.find((item) => item.id === current);

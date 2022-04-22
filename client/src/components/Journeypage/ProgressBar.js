@@ -1,25 +1,36 @@
 import React from "react";
 import { Progress, Button, ButtonGroup, Checkbox } from "@chakra-ui/react";
 import Card from "./Card";
-import styles from "../../styles/styles.css"
+import styles from "../../styles/Journey.module.css";
 
 const ProgressBar = ({ data, setData }) => {
   const [progress, setProgress] = React.useState(0);
   const [current, setCurrent] = React.useState(0);
   const [isCompleted, setIsCompleted] = React.useState(false);
-  const selectedProgress = React.useRef([React.createRef(null)]);
-  console.log(data.length);
 
   return (
     <>
       <div
-        className={styles.progressContainer}
+        style={{
+          width: "100%",
+          position: "relative",
+          display: "flex",
+          alignItems: "center",
+          padding: "8rem 0 4rem 0",
+        }}
       >
         <Progress
           className={styles.progress}
+          shadow="xs"
           colorScheme="green"
           size="lg"
           value={progress}
+          style={{
+            width: "100%",
+            zIndex: 1,
+            position: "absolute",
+            transition: "all 0.3s",
+          }}
         />
         <ButtonGroup
           style={{
@@ -31,8 +42,9 @@ const ProgressBar = ({ data, setData }) => {
           {data.map((item) => (
             <>
               <Button
+                style={{ borderRadius: "50px" }}
                 key={item.id}
-                ref={selectedProgress}
+                shadow="md"
                 variantcolor="green"
                 onClick={() => {
                   // item.id === data.length
@@ -45,6 +57,7 @@ const ProgressBar = ({ data, setData }) => {
               </Button>
               <Checkbox
                 className={styles.checkbox}
+                style={{ position: "absolute" }}
                 display={item.id === current ? "block" : "none"}
                 size="lg"
                 onChange={() => {
