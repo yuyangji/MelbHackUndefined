@@ -1,18 +1,11 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 
 import JourneyCardList from "../shared/JourneyCardList";
 
-
-
 const Homepage = ({ isLoggedIn, username, allJourney, savedJourney }) => {
-
-
-
-
+  console.log(allJourney);
   return (
     <>
-    
-
       {/* Layout placed under header */}
       <div style={{ minWidth: "100vw", minHeight: `calc(100vh - 56px)` }}>
         <div
