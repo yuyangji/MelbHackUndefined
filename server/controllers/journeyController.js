@@ -1,5 +1,16 @@
 const Journey = require("../models/journey");
 
+const searchJourney = async (req, res) => {
+  const {journeySearch} = req.query;
+  try{
+    const journeys = await Journey.find({
+      $test: {$search: journeySearch}});
+      return res.status(201).json(journeys)
+  }catch(err){
+    return res.json({ message: err.message });
+  }
+};
+
 //Middleware function to get journey.
 const getJourney = async (req, res, next) => {
   let journey;
@@ -37,7 +48,7 @@ const createJourney = async (req, res) => {
   const journey = new Journey({
     title: req.body.title,
     author_id: user_id,
-    author_name:req.session.username,
+    author_name: req.session.username,
     milestones: req.body.milestones,
   });
   try {
@@ -52,12 +63,12 @@ const createJourney = async (req, res) => {
 
 //getJourney middleware is called before this. so req has journey.
 const updateJourney = async (req, res) => {
-//Check if author id of journey is the same as logged in id.
+  //Check if author id of journey is the same as logged in id.
 
-//  if (typeof(req.journey.author_id) == 'undefined'|| req.journey.author_id != req.session.user_id) {
-//    return res.status(400).json({ message: "You cannot edit this journey" });
-//  }
-//obtain values from request, and assign.
+  //  if (typeof(req.journey.author_id) == 'undefined'|| req.journey.author_id != req.session.user_id) {
+  //    return res.status(400).json({ message: "You cannot edit this journey" });
+  //  }
+  //obtain values from request, and assign.
   if (req.body.title != null) {
     res.journey.title = req.body.title;
   }
@@ -82,13 +93,11 @@ const deleteJourney = async (req, res) => {
   }
 };
 
-
-
-
 module.exports = {
   getAllJourneys,
   createJourney,
   updateJourney,
   deleteJourney,
   getJourney,
+  searchJourney
 };

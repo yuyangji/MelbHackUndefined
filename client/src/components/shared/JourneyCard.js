@@ -27,6 +27,7 @@ const JourneyCard = ({ journey, savedList }) => {
           to={"/journey/" + journey._id}
         >
           <Card
+            border="info"
             body
             style={{ minWidth: "780px", maxWidth: "890px", width: "780px" }}
           >

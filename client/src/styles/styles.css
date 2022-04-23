@@ -1,3 +1,13 @@
+body {
+  background: rgb(86, 79, 203);
+  background: linear-gradient(
+   180deg,
+    rgba(86, 79, 203, 0.5410539215686274) 0%,
+    rgba(68, 68, 175, 0.29735644257703087) 42%,
+    rgba(0, 212, 255, 0.2497373949579832) 73%
+  );
+}
+
 /* Header */
 #createJourney_btn {
   margin-left: 10px;

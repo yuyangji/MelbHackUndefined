@@ -38,6 +38,7 @@ const Header = ({ handleLogin, handleSignUp }) => {
     setShowSignUp(!showSignUp);
   }
 
+
   return (
     <>
       <Navbar bg="light" expand="lg">

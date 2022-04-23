@@ -6,6 +6,7 @@ import Homepage from "./components/Homepage";
 import SavedJourneyPage from "./components/SavedJourneyPage";
 import LoggedHeader from "./components/shared/LoggedHeader";
 import Header from "./components/shared/Header";
+
 import {
   getUser,
   handleSignUp,
