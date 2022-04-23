@@ -19,22 +19,24 @@ const authenticate = (req, res, next) => {
   return next();
 };
 
-const checkDuplicateUsername = (req, res, next) => {
-    User.findOne({
-        username: req.body.username
-      }).exec((err, user) => {
-        if (err) {
-          res.status(500).send({ message: err });
-          return;
-        }
-        if (user) {
-          res.status(400).send({ message: "username taken" });
-          return;
-        }
-        next();
-      });
+const checkDuplicateUsername = async (req, res, next) => {
+  var username = req.body.username;
+
+  try{
+    const user = await User.findOne({ username: username });
+
+    if (user) {
+      res.status(500).send({ message: "username taken" });
+      return;
+    }
+    next();
+  
+  }catch(err){
+    res.status(400).json({ message: err.message });
+  }
 }
 
 module.exports = {
-    authenticate
+    authenticate,
+    checkDuplicateUsername
 }

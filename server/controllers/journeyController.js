@@ -80,6 +80,9 @@ const deleteJourney = async (req, res) => {
   }
 };
 
+
+
+
 module.exports = {
   getAllJourneys,
   createJourney,

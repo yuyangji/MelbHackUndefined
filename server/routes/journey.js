@@ -24,6 +24,4 @@ router.patch('/:id', [authenticate, JourneyController.getJourney], JourneyContro
 router.delete('/:id', JourneyController.getJourney, JourneyController.deleteJourney)
 
 
-
-
 module.exports = router

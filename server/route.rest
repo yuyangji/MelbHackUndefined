@@ -36,7 +36,7 @@ POST http://localhost:3000/auth/register
 Content-Type: application/json
 
 {
-    "username":"dummyuser2",
+    "username":"dummyuser3",
     "password": "dummypsw"
 }
 
@@ -47,10 +47,23 @@ POST http://localhost:3000/auth/login
 Content-Type: application/json
 
 {
-    "username":"dummyuser2",
+    "username":"dummyuser3",
     "password": "dummypsw"
 }
 
 ###
 
 POST http://localhost:3000/auth/logout
+
+
+###
+//USER
+GET http://localhost:3000/user/myJourneys
+
+###
+
+GET http://localhost:3000/user
+
+
+###
+PATCH http://localhost:3000/user/saveJourney/626360df244b359cf2f58718
