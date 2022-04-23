@@ -74,50 +74,51 @@ function Form() {
 
   //Below returns the milestone-creation form
   return (
-    <form onSubmit={submitCreateTimeline} className="formContainer">
-        
-      <h1>Create a Journey</h1>
-      <label className="form_journeyTitle">Journey Title</label>
-      <input
-        type="text"
-        required="requried"
-        name="title"
-        id="timeline-title"
-        placeholder="e.g. Python"
-        className = "formTitleInput"
-      />
+    <div className="formPage">
+      <form onSubmit={submitCreateTimeline} className="formContainer">
+        <h1>Create a Journey</h1>
+        <label className="form_journeyTitle">Journey Title</label>
+        <input
+          type="text"
+          required="requried"
+          name="title"
+          id="timeline-title"
+          placeholder="e.g. Python"
+          className="formTitleInput"
+        />
 
-      <div id="milestone_container">
-        {numOfMilestones.map(function (milestone) {
-          return (
-            <MilestoneInput
-              name={"milestone"}
-              number={milestone}
-              key={milestone}
-              id={milestone}
-            />
-          );
-        })}
-      </div>
+        <div id="milestone_container">
+          {numOfMilestones.map(function (milestone) {
+            return (
+              <MilestoneInput
+                name={"milestone"}
+                number={milestone}
+                key={milestone}
+                id={milestone}
+              />
+            );
+          })}
+        </div>
 
-      <p>
-        <Button
-          type="button"
-          value="addMilestone"
-          id="addMilestone"
-          onClick={handleAddMilestone}
-          variant="outline-primary"
-        >
-          Add milestone
-        </Button>
-      </p>
+        <p>
+          <Button
+            type="button"
+            value="addMilestone"
+            id="addMilestone"
+            onClick={handleAddMilestone}
+            variant="outline-primary"
+          >
+            Add milestone
+          </Button>
+        </p>
 
-      <p>
-        <Button type="submit" value="createTimeline" id="createTimeline">
-          Create Journey
-        </Button>
-      </p>
-    </form>
+        <p>
+          <Button type="submit" value="createTimeline" id="createTimeline">
+            Create Journey
+          </Button>
+        </p>
+      </form>
+    </div>
   );
 }
 
