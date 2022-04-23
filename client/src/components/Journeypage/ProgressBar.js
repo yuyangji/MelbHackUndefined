@@ -39,11 +39,11 @@ const ProgressBar = ({ data, setData }) => {
             justifyContent: "space-evenly",
           }}
         >
-          {data.map((item) => (
+          {data.map((item, index) => (
             <>
               <Button
                 style={{ borderRadius: "50px" }}
-                key={item.id}
+                key={`button${item.id}`}
                 shadow="md"
                 variantcolor="green"
                 onClick={() => {
@@ -59,6 +59,7 @@ const ProgressBar = ({ data, setData }) => {
                 className={styles.checkbox}
                 style={{ position: "absolute" }}
                 display={item.id === current ? "block" : "none"}
+                key={`checkbox${item.id}`}
                 size="lg"
                 onChange={() => {
                   item.id === data.length

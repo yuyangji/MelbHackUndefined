@@ -112,9 +112,72 @@
     transition: all .3s ease;
   }
   
-  /* Moved from styles -> css */
+  /* Modal */
+  .modalBackground{
+      /* display: none; */
+    position: fixed; 
+    z-index: 5; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+    display: block;
+  }
   
-  
+  .modalContent{
+    background-color: #fefefe;
+    margin: 20% auto;
+    padding: 30px 60px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+  }
+
+  .modalContent h2{
+    font-size: 24px;
+    text-align: center;
+    margin: 20px;
+  }
+
+  .modalContent_inputContainer{
+    width: 100%;
+    margin: 20px auto;
+  }
+
+  .modalContent p{
+    margin-top: 10px;
+  }
+
+  .modalContent label{
+    width: 100px;
+  }
+
+  .modalContent input{
+   border: 1px solid grey;
+   margin-left: 10px;
+   width: 70%;
+   max-width:  200px;
+  }
+
+  .modalContent_btnContainer{
+    width: 100%;
+    margin: auto;
+    margin-top: 35px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .btn {
+    margin: 0 20px;
+    width: 100px
+  }
+
+  .hidden{
+    display:none
+  }
   
   @media (max-width: 600px) {
     .grid {

@@ -3,8 +3,11 @@ import Homepage from "./components/Homepage";
 import Form from "./components/Formpage/Form";
 import ProgressBar from "./components/Journeypage/ProgressBar";
 import { ChakraProvider } from "@chakra-ui/react";
+import styles from '../src/styles/styles.css'
 
 import "bootstrap/dist/css/bootstrap.min.css";
+import LoginModal from "./components/shared/Login";
+import SignupModal from "./components/shared/Signup";
 
 function App() {
   const [data, setData] = React.useState([
@@ -41,7 +44,8 @@ function App() {
   return (
     <div>
       <ChakraProvider>
-        <ProgressBar data={data} setData={setData} />;
+      <Homepage />
+        {/* <ProgressBar data={data} setData={setData} />; */}
       </ChakraProvider>
     </div>
   );
