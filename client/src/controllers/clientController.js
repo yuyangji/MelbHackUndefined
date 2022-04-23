@@ -70,6 +70,14 @@ const getAllJourneys = async (setJourneys) => {
   setJourneys(res);
 };
 
+const getJourney = async (setJourney, id) => {
+  console.log("called");
+  const response = await fetch("/journey/" + id);
+  const json = await response.json();
+  console.log(json);
+  setJourney(json);
+};
+
 const getSavedJourneys = async (setJourneys) => {
   var res = [];
   const response = await fetch("/user/savedJourneys");
@@ -88,4 +96,5 @@ module.exports = {
   handleLogin,
   getAllJourneys,
   getSavedJourneys,
+  getJourney,
 };

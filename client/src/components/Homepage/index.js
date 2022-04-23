@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-
 import JourneyCardList from "../shared/JourneyCardList";
 
 const Homepage = ({ isLoggedIn, username, allJourney, savedJourney }) => {

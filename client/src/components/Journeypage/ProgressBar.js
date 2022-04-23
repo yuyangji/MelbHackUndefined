@@ -1,14 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Progress, Button, ButtonGroup, Checkbox } from "@chakra-ui/react";
 import Card from "./Card";
 import styles from "../../styles/Journey.module.css";
 import { ChakraProvider } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
+import { getJourney } from "../../controllers/clientController";
 
 const ProgressBar = ({ journeyList }) => {
-  console.log(journeyList);
   // id of the journey
   const { id } = useParams();
+
+  useEffect(() => {
+    getJourney(setJourney, id);
+  }, [id]);
+
+  console.log(journeyList);
+
   // get the journey
   var journeyFound;
   for (let j in journeyList) {

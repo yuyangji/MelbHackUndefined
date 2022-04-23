@@ -23,7 +23,7 @@ const JourneyCard = ({ journey, savedList }) => {
   return (
     <>
       <div style={{ marginBottom: "15px" }}>
-        <a href={linkHref}>
+        <a style={{ textDecoration: "none", color: "inherit" }} href={linkHref}>
           <Card
             body
             style={{ minWidth: "780px", maxWidth: "890px", width: "780px" }}
@@ -38,7 +38,7 @@ const JourneyCard = ({ journey, savedList }) => {
                     marginBottom: "5px",
                   }}
                 />{" "}
-                {journey.creator}
+                {journey.author_name}
               </Col>
             </Row>
 
