@@ -2,14 +2,14 @@ import React from "react";
 import { Progress, Button, ButtonGroup, Checkbox } from "@chakra-ui/react";
 import Card from "./Card";
 import styles from "../../styles/Journey.module.css";
-
+import { ChakraProvider } from "@chakra-ui/react";
 const ProgressBar = ({ data, setData }) => {
   const [progress, setProgress] = React.useState(0);
   const [current, setCurrent] = React.useState(0);
   const [isCompleted, setIsCompleted] = React.useState(false);
 
   return (
-    <>
+    <ChakraProvider>
       <div
         style={{
           width: "100%",
@@ -77,7 +77,7 @@ const ProgressBar = ({ data, setData }) => {
         setData={setData}
         setProgress={setProgress}
       />
-    </>
+    </ChakraProvider>
   );
 };
 

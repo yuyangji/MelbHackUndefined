@@ -1,9 +1,13 @@
-import React from "react";
+import React, {useEffect} from "react";
 import Header from "../shared/Header";
 import JourneyCardList from "../shared/JourneyCardList";
 import LoggedHeader from "../shared/LoggedHeader";
 
+
 const Homepage = ({ isLoggedIn, username, allJourney, savedJourney }) => {
+
+
+
   return (
     <>
       {isLoggedIn ? <LoggedHeader username={username} /> : <Header />}
