@@ -1,0 +1,52 @@
+.container {
+    padding: 0 2rem;
+}
+
+.card {
+    margin: 1rem auto;
+    padding: 1.5rem;
+    text-align: left;
+    color: inherit;
+    text-decoration: none;
+    background-color: #fafafaaa;
+    border-radius: 10px;
+    min-width: none;
+    max-width: 50rem;
+    min-height:25rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card h2 {
+    margin: 0 0 1rem 0;
+    font-size: 1.5rem;
+}
+
+.card p {
+    margin: 0;
+    font-size: 1.25rem;
+    line-height: 1.5;
+}
+.progress div{
+    transition: all .3s ease;
+}
+
+.checkbox{
+    top:17.3rem;
+    padding-left: 45rem;
+    margin:0;
+}
+.checkbox span{
+    border: solid 2px #aaaaaaaa;
+}
+
+@media screen and (max-width: 840px) {
+    .checkbox{
+        right: 3.6rem;
+    }
+    
+}
+    
+
+
+
+
