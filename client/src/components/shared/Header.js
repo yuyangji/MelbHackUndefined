@@ -32,12 +32,10 @@ const Header = ({ handleLogin, handleSignUp }) => {
 
   function toggleLoginModal() {
     setShowLogin(!showLogin);
-    console.log("clicked");
   }
 
   function toggleSignupModal() {
     setShowSignUp(!showSignUp);
-    console.log("clicked");
   }
 
   return (

@@ -10,8 +10,8 @@ async function getUser(callback) {
 
 //LOGIN
 async function handleLogin(username, password, callback) {
-  console.log(username);
-  console.log(password);
+  // console.log(username);
+  // console.log(password);
 
   const loginResult = await fetch("/auth/login", {
     method: "POST",
@@ -24,7 +24,7 @@ async function handleLogin(username, password, callback) {
     }),
   });
   const res = await loginResult.json();
-  console.log(res);
+  // console.log(res);
 
   if (loginResult.status === 201) {
     callback(res);
@@ -33,8 +33,8 @@ async function handleLogin(username, password, callback) {
 
 //SIGN UP
 async function handleSignUp(username, password, callback) {
-  console.log(username);
-  console.log(password);
+  // console.log(username);
+  // console.log(password);
 
   const signUpResult = await fetch("/auth/register", {
     method: "POST",
@@ -47,7 +47,7 @@ async function handleSignUp(username, password, callback) {
     }),
   });
   const res = await signUpResult.json();
-  console.log(res);
+  // console.log(res);
 
   if (signUpResult.status === 201) {
     callback(res);

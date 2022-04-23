@@ -65,9 +65,9 @@ function Form() {
     });
 
     ///////////////////////////Logs
-    console.log(allTitles);
-    console.log(allContents);
-    console.log(milestoneObjArray);
+    // console.log(allTitles);
+    // console.log(allContents);
+    // console.log(milestoneObjArray);
 
     ///////////////Need axious post to Node/Mongoose
   }
