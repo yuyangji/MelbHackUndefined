@@ -37,6 +37,7 @@ const createJourney = async (req, res) => {
   const journey = new Journey({
     title: req.body.title,
     author_id: user_id,
+    author_name:req.session.username,
     milestones: req.body.milestones,
   });
   try {

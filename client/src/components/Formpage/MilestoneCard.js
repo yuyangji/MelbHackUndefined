@@ -35,6 +35,7 @@ function MilestoneCard({ index, setMilestones, milestones }) {
         <label>Name</label>
         <input
           ref={title}
+      
           onChange={updateValues}
           type="text"
           name="milestoneTitles[]"

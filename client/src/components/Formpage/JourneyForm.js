@@ -1,6 +1,12 @@
 import MilestoneCard from "./MilestoneCard";
 import Button from "react-bootstrap/Button";
-export const journeyForm = ({ formTitle, onSubmit, milestones, setMilestones, setTitle }) => {
+export const journeyForm = ({
+  formTitle,
+  onSubmit,
+  milestones,
+  setMilestones,
+  setTitle,
+}) => {
   function handleAddMilestone() {
     //update number + render input
     setMilestones([...milestones, { title: "", content: "" }]);
@@ -39,6 +45,7 @@ export const journeyForm = ({ formTitle, onSubmit, milestones, setMilestones, se
           type="button"
           value="addMilestone"
           id="addMilestone"
+         
           onClick={handleAddMilestone}
           variant="outline-primary"
         >
@@ -47,8 +54,13 @@ export const journeyForm = ({ formTitle, onSubmit, milestones, setMilestones, se
       </p>
 
       <p>
-        <Button type="submit" value="createTimeline" id="createTimeline">
-         Save Journey
+        <Button
+          bsPrefix="formSaveBtn"
+          type="submit"
+          value="createTimeline"
+          id="createTimeline"
+        >
+          Save Journey
         </Button>
       </p>
     </form>

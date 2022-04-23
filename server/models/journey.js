@@ -12,6 +12,11 @@ const journeySchema = new Schema({
         required: true
       
     },
+    author_name:{
+        type:String,
+        required:true
+    },
+
     milestones : [{
         step_no: Number,
         title:String,
