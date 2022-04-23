@@ -15,14 +15,14 @@ const LoggedHeader = ({ username, logout }) => {
     <>
       <Navbar bg="light" expand="lg">
         <Container>
-          <Navbar.Brand href="#home" style={{ fontWeight: "bold" }}>
+          <Navbar.Brand href="/" style={{ fontWeight: "bold" }}>
             edJourney
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="#home">All Journeys</Nav.Link>
-              <Nav.Link href="#link">Saved Journeys</Nav.Link>
+              <Nav.Link href="/">All Journeys</Nav.Link>
+              <Nav.Link href="/saved">Saved Journeys</Nav.Link>
               <Form className="d-flex">
                 <FormControl
                   type="search"
