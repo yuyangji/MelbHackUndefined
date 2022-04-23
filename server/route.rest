@@ -2,4 +2,68 @@ GET http://localhost:3000/journey
 
 ###
 
-GET http://localhost:3000/journey/5
+GET http://localhost:3000/journey/6262872f58bafe6867a8cb98
+
+
+###
+POST http://localhost:3000/journey
+Content-Type: application/json
+
+{
+    "title":"dd#",
+    "milestones": [
+        {
+            "step_no" : 1,
+            "title" : "learn stuff",
+            "content": "stuff is awesome."
+        }
+    ]
+}
+
+###
+DELETE http://localhost:3000/journey/6262872f58bafe6867a8cb98
+
+###
+PATCH http://localhost:3000/journey/6262830102a631c24979743c
+Content-Type: application/json
+
+{
+    "title":"rf dfdf"
+}
+// AUTHENTICATION
+###
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+    "username":"dummyuser3",
+    "password": "dummypsw"
+}
+
+
+###
+
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+    "username":"dummyuser3",
+    "password": "dummypsw"
+}
+
+###
+
+POST http://localhost:3000/auth/logout
+
+
+###
+//USER
+GET http://localhost:3000/user/myJourneys
+
+###
+
+GET http://localhost:3000/user
+
+
+###
+PATCH http://localhost:3000/user/saveJourney/626360df244b359cf2f58718
