@@ -39,9 +39,10 @@ const saveJourney = async (req, res) => {
       if (user && journey) {
         user.saved_journeys.push(journey._id);
         const updatedUser = await user.save();
-        return res.json(updatedUser);
+        return res.status(200).json(updatedUser);
+      }else{
+        return res.status(400).json({ message: "something went wrong"});
       }
-      res.json(user);
     } catch (err) {
       res.status(500).json({ message: err.message });
     }

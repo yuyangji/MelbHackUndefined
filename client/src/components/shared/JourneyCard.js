@@ -19,6 +19,17 @@ const JourneyCard = ({ journey, savedList }) => {
   }
   const [isSaved] = useState(temp);
 
+ const saveJourney = async (id) =>{
+      
+  const response = await fetch("/user//saveJourney/" + id, {
+    method: "PATCH",
+  })
+
+  const res = await response.json();
+  console.log(res)
+
+}
+
   return (
     <>
       <div style={{ marginBottom: "15px" }}>
@@ -103,7 +114,7 @@ const JourneyCard = ({ journey, savedList }) => {
                       className="shared_journey_card"
                       onClick={(event) => {
                         event.preventDefault();
-                        event.preventDefault();
+                        saveJourney( journey._id);
                         console.log("Save clicked. replace this function");
                       }}
                     >

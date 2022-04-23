@@ -24,6 +24,6 @@ router.patch('/:id', [authenticate, JourneyController.getJourney], JourneyContro
 router.delete('/:id', JourneyController.getJourney, JourneyController.deleteJourney)
 
 
-router.get('/search/:name', JourneyController.searchJourney)
+router.get('/search', JourneyController.searchJourney)
 
 module.exports = router
