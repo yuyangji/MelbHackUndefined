@@ -91,11 +91,6 @@ function App() {
             element={<ProgressBar journeyList={journeyList} />}
           />
         </Routes>
-
-        {/* <div className = 'formPage'>
-      <Form />
-      </div> */}
-        {/* <ProgressBar data={data} setData={setData} />; */}
       </div>
     </Router>
   );
