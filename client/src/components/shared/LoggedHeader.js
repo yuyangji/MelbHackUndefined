@@ -15,14 +15,14 @@ const LoggedHeader = ({ username, logout }) => {
     <>
       <Navbar bg="light" expand="lg">
         <Container>
-          <Navbar.Brand href="#home" style={{ fontWeight: "bold" }}>
+          <Navbar.Brand href="/" style={{ fontWeight: "bold" }}>
             edJourney
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="#home">All Journeys</Nav.Link>
-              <Nav.Link href="#link">Saved Journeys</Nav.Link>
+              <Nav.Link href="/">All Journeys</Nav.Link>
+              <Nav.Link href="/saved">Saved Journeys</Nav.Link>
               <Form className="d-flex">
                 <FormControl
                   type="search"
@@ -34,11 +34,12 @@ const LoggedHeader = ({ username, logout }) => {
               </Form>
               <Button
                 variant="success"
-                style={{ 
+                style={{
                   width: "150px",
-                  marginLeft: "10px"}}
+                  marginLeft: "10px",
+                }}
                 id="createJourney_btn"
-                href="#create"
+                href="/create"
               >
                 Create Journey
               </Button>
@@ -53,7 +54,7 @@ const LoggedHeader = ({ username, logout }) => {
               <Button
                 variant="outline-secondary"
                 style={{ whiteSpace: "nowrap" }}
-                onClick = {logout}
+                onClick={logout}
               >
                 Log Out
               </Button>

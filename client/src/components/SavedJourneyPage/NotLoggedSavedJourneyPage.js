@@ -1,11 +1,8 @@
 import React from "react";
-import Header from "../shared/Header";
 import { Card, Row, Col } from "react-bootstrap";
 const NotLoggedSavedJourneyPage = () => {
   return (
     <>
-      <Header />
-
       {/* Layout placed under header */}
       <div style={{ minWidth: "100vw", minHeight: `calc(100vh - 56px)` }}>
         <div

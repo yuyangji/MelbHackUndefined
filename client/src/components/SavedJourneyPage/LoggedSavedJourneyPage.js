@@ -1,6 +1,5 @@
 import React from "react";
 import JourneyCardList from "../shared/JourneyCardList";
-import LoggedHeader from "../shared/LoggedHeader";
 
 const LoggedSavedJourneyPage = ({ username, journeyList, savedList }) => {
   // get my journey and saved journey
@@ -17,12 +16,9 @@ const LoggedSavedJourneyPage = ({ username, journeyList, savedList }) => {
       }
     }
   }
-  console.log(myJourneyList);
 
   return (
     <>
-      <LoggedHeader username={username} />
-
       {/* Layout placed under header */}
       <div style={{ minWidth: "100vw", minHeight: `calc(100vh - 56px)` }}>
         <div

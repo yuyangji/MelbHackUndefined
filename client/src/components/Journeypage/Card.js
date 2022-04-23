@@ -3,8 +3,7 @@ import { Checkbox } from "@chakra-ui/react";
 import { useCheckbox } from "@chakra-ui/react";
 import styles from "../../styles/Journey.module.css";
 
-const Card = ({ current, data, setData, setProgress }) => {
-  let item = data.find((item) => item.id === current);
+const Card = ({ current, setProgress }) => {
 
   return (
     <div className={styles.journey_cards_container}>
@@ -18,13 +17,13 @@ const Card = ({ current, data, setData, setProgress }) => {
               alignItems: "center",
             }}
           >
-            <h2>{item ? item.title : ""}</h2>
+            <h2>{current ? current.title : ""}</h2>
             {/* <Checkbox
               size="lg"
               onChange={(e) => console.log(e.target.value)}
             ></Checkbox> */}
           </div>
-          <p>{item ? item.content : ""}</p>
+          <p>{current ? current.content : ""}</p>
         </div>
       </div>
     </div>

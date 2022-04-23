@@ -1,37 +1,34 @@
-import React, {useEffect} from "react";
-
+import React, { useEffect } from "react";
 import JourneyCardList from "../shared/JourneyCardList";
-import homepagePic from './images/homepage_pic.jpg';
-import {Button} from 'react-bootstrap'
+import homepagePic from "./images/homepage_pic.jpg";
+import { Button } from "react-bootstrap";
 
 const Homepage = ({ isLoggedIn, username, allJourney, savedJourney }) => {
-
-
-
-
+  console.log(allJourney);
   return (
     <>
-    
-
       {/* Layout placed under header */}
       <div style={{ minWidth: "100vw", minHeight: `calc(100vh - 56px)` }}>
-
         <div className="homepage_banner">
           <div className="homepage_banner-container">
             <div className="homepage_img-container">
-              <img src={homepagePic} className="homepage_img"/>
+              <img src={homepagePic} className="homepage_img" />
             </div>
             <div className="homepage_description-container">
               <h3>Start a new learning journey</h3>
-              <p>Access resources and work through step-by-step milestones created by other users. Enhance your self-learning process!</p>
+              <p>
+                Access resources and work through step-by-step milestones
+                created by other users. Enhance your self-learning process!
+              </p>
               <p>Or want to share your expertise?</p>
               <Button
                 variant="success"
-                style={{ 
+                style={{
                   width: "150px",
-                  marginLeft: "10px"}}
+                  marginLeft: "10px",
+                }}
                 id="createJourney_btn"
-                href="#create"
+                href="/create"
               >
                 Create a Journey
               </Button>

@@ -3,7 +3,6 @@ import JourneyCard from "./JourneyCard";
 import { Card, Row, Col } from "react-bootstrap";
 
 const JourneyCardList = ({ journeyList, savedList, listTitle }) => {
-  console.log(journeyList);
   if (journeyList.length === 0) {
     return (
       <>
