@@ -56,7 +56,7 @@ function App() {
     <Router>
       <div>
         {isLoggedIn ? (
-          <LoggedHeader username={username} />
+          <LoggedHeader username={username} logout = {onClickLogOut}/>
         ) : (
           <Header handleLogin={onClickLogin} handleSignUp={onClickSignUp} />
         )}
