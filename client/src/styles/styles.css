@@ -370,3 +370,7 @@
     margin: 20px 0;
   }
 }
+
+.shared_journey_card:hover {
+  background-color: #e8e8e8;
+}
