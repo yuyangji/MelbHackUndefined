@@ -11,10 +11,12 @@ const userSchema = new Schema({
         type:String,
         required: true
     },
-    saved_timelines:[{
-        timeline_id :Number,
-        timeline_progress:Number
-    }]
+    saved_journeys:{
+        type:[{
+        journey_id :Number,
+        journey_progress:Number
+        }],
+    default: []}
 
 }, {timestamps:true})
 
