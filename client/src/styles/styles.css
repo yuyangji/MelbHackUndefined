@@ -3,6 +3,42 @@
   margin-left: 10px;
 }
 
+/* Homepage */
+.homepage_banner{
+  width: 100%; 
+  background-color: white;
+  padding: 40px 0px; 
+  white-space: pre-wrap
+}
+
+.homepage_banner-container{
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.homepage_img-container{
+  display: inline-block;
+}
+
+.homepage_img{
+  width: 500px;
+  height: 100%;
+  margin-right: 20px;
+}
+
+.homepage_description-container{
+  display: inline-block;
+  width: 500px;
+  padding-top: 20px;
+}
+
+
+#homepage_img{
+  width:100px
+}
 
 /* Index.js */
 .journeyTitle{
