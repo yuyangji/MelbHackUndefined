@@ -48,7 +48,7 @@
   
   /* Card and progress bar */
   
-  .container {
+  .journey_cards_container {
     padding: 0 2rem;
   }
   
@@ -119,7 +119,7 @@
     max-width: 800px;
   }
   
-  .card {
+  .journey_card {
     margin: 2rem auto !important;
     padding: 1.5rem;
     text-align: left;
@@ -133,12 +133,12 @@
   }
   
   
-  .card h2 {
+  .journey_card h2 {
     margin: 0 0 1rem 0;
     font-size: 1.5rem;
   }
   
-  .card p {
+  .journey_card p {
     margin: 0;
     font-size: 1.25rem;
     line-height: 1.5;
