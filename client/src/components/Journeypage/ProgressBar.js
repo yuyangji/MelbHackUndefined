@@ -20,12 +20,11 @@ const ProgressBar = ({ journeyList }) => {
   const [journey, setJourney] = useState(journeyFound);
   // `data` is the milestone list of the journey
   const [data, setData] = useState(journey.milestones);
-  const [current, setCurrent] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
   // const [isCompleted, setIsCompleted] = useState(false);
   const [progress, setProgress] = useState(0);
-
   const [currentData, setCurrentData] = useState()
-
+  const [latestProgress, setLatestProgress] = useState(-1);
   const handleClickNode = (idx)=>{
     setCurrentData(data[idx])
   }
@@ -73,9 +72,7 @@ const ProgressBar = ({ journeyList }) => {
                 shadow="md"
                 variantcolor="green"
                 onClick={() => {
-                  // item.id === data.length
-                  //   ? setProgress(100)
-                  //   : setProgress((item.id / (data.length + 1)) * 100);
+                  setCurrentIndex(index);
                   handleClickNode(index);
                 }}
               >
@@ -84,13 +81,21 @@ const ProgressBar = ({ journeyList }) => {
               <Checkbox
                 className={styles.checkbox}
                 style={{ position: "absolute" }}
-                display={item.id === current ? "block" : "none"}
+                display={index === currentIndex ? "block" : "none"}
                 key={`checkbox${item.id}`}
                 size="lg"
-                onChange={() => {
-                  item.id === data.length
-                    ? setProgress(100)
-                    : setProgress((item.id / (data.length + 1)) * 100);
+                onChange={(e) => {
+                  if (e.target.checked){
+                    if(index > latestProgress){
+                      setLatestProgress(index)
+                      setProgress((index / (data.length + 1)) * 100);
+                    }
+                  }else{
+                    if(index < latestProgress){
+                      setLatestProgress(index)
+                    }
+                  }
+                 
                 }}
               ></Checkbox>
             </>
