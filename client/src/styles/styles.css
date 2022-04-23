@@ -158,10 +158,10 @@
 
 .modalContent {
   background-color: #fefefe;
-  margin: 20% auto;
+  margin: 10% auto;
   padding: 30px 60px;
   border-radius: 10px;
-  width: 80%;
+  width: 100%;
   max-width: 500px;
 }
 

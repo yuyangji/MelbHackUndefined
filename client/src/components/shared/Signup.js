@@ -36,7 +36,7 @@ function SignupModal({ show, setShow, signUpHandler }) {
               <p>
                 <label>Password</label>
                 <input
-                  type="text"
+                  type="password"
                   name="signup_password"
                   id="signup_password"
                   onChange={(e) => setPassword(e.currentTarget.value)}

@@ -12,7 +12,7 @@ function LoginModal({ showSignUpModal, show, setShow, loginHandler }) {
   }
 
   return (
-    <Modal show={show} onHide = {setShow} className="modalBackground hidden" id="loginModal">
+    <Modal show={show} onHide = {setShow} className="modalBackground" id="loginModal">
       <Modal.Body>
         <div className="modalContent">
           <form>
@@ -27,8 +27,9 @@ function LoginModal({ showSignUpModal, show, setShow, loginHandler }) {
               <p>
                 <label>Password</label>
                 <input 
+                type = "password"
                 onChange = {(e) => setPassword(e.currentTarget.value)}
-                type="text" name="password" id="password" />
+                name="password" id="password" />
               </p>
             </div>
             <div className="modalContent_btnContainer">
