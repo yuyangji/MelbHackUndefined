@@ -74,7 +74,11 @@ function App() {
             }
           />
           <Route exact path="/create-journey" element={<Form />} />
-          <Route exact path="/journey/:id" element={<ProgressBar />} />
+          <Route
+            exact
+            path="/journey/:id"
+            element={<ProgressBar journeyList={journeyList} />}
+          />
         </Routes>
 
         {/* <div className = 'formPage'>
