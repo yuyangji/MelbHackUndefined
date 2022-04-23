@@ -40,7 +40,7 @@ const LoggedSavedJourneyPage = ({ username, journeyList, savedList }) => {
               savedList={savedList}
               listTitle="Saved Journeys"
             />
-
+          <br/>
             <JourneyCardList
               style={{ display: "block" }}
               journeyList={myJourneyList}

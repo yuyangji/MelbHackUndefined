@@ -7,7 +7,7 @@ const JourneyCardList = ({ journeyList, savedList, listTitle }) => {
     return (
       <>
         <div style={{ marginBottom: "5px", marginLeft: "5px" }}>
-          {listTitle}
+          <h3> {listTitle}</h3>
         </div>
         <div style={{ marginBottom: "15px", marginTop: "10px" }}>
           <Card
@@ -39,7 +39,7 @@ const JourneyCardList = ({ journeyList, savedList, listTitle }) => {
     return (
       <>
         <div style={{ marginBottom: "5px", marginLeft: "5px" }}>
-          {listTitle}
+          <h3 style={{ fontweight: "bold", marginBottom: '25px' }}>{listTitle}</h3>
         </div>
         {journeyList.map((journey, index) => (
           <JourneyCard key={index} journey={journey} savedList={savedList} />

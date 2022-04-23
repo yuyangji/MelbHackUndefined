@@ -1,5 +1,6 @@
 import MilestoneCard from "./MilestoneCard";
 import Button from "react-bootstrap/Button";
+
 export const journeyForm = ({
   formTitle,
   onSubmit,
@@ -54,14 +55,17 @@ export const journeyForm = ({
       </p>
 
       <p>
+
         <Button
           bsPrefix="formSaveBtn"
           type="submit"
           value="createTimeline"
           id="createTimeline"
+        
         >
           Save Journey
         </Button>
+ 
       </p>
     </form>
   );

@@ -21,7 +21,10 @@ function CreateForm() {
       });
     });
     console.log(milestoneArray);
-    FormController.publishJourney(title, milestoneArray);
+    if (FormController.publishJourney(title, milestoneArray)){
+      window.location.href='/'
+    }
+ 
   }
 
   //Below returns the milestone-creation form
