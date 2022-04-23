@@ -1,4 +1,46 @@
+/* Header */
+#createJourney_btn {
+  margin-left: 10px;
+}
+
+/* Homepage */
+.homepage_banner {
+  width: 100%;
+  background-color: white;
+  padding: 40px 0px;
+  white-space: pre-wrap;
+}
+
+.homepage_banner-container {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.homepage_img-container {
+  display: inline-block;
+}
+
+.homepage_img {
+  width: 500px;
+  height: 100%;
+  margin-right: 20px;
+}
+
+.homepage_description-container {
+  display: inline-block;
+  width: 500px;
+  padding-top: 20px;
+}
+
+#homepage_img {
+  width: 100px;
+}
+
 /* Index.js */
+
 .journeyTitle {
   font-size: 30px;
   margin: 1rem 2rem 2.5rem 2rem;
@@ -88,17 +130,6 @@
   transition: color 0.15s ease, border-color 0.15s ease;
   min-width: none;
   max-width: 750px;
-}
-
-.card h2 {
-  margin: 0 0 1rem 0;
-  font-size: 1.5rem;
-}
-
-.card p {
-  margin: 0;
-  font-size: 1.25rem;
-  line-height: 1.5;
 }
 
 .logo {
@@ -213,7 +244,6 @@
 
 .formSaveBtn:hover {
   background: #607477;
- 
 }
 
 .formAddMilestoneBtn {
@@ -303,11 +333,36 @@
   clear: right;
 }
 
-@media (max-width: 600px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
-  }
+/* Card and progress bar */
+
+.journey_cards_container {
+  padding: 0 2rem;
+}
+
+.main {
+  min-height: 100vh;
+  padding: 4rem 0;
+  flex: 1;
+}
+
+.footer {
+  display: flex;
+  flex: 1;
+  padding: 2rem 0;
+  border-top: 1px solid #eaeaea;
+  justify-content: center;
+  align-items: center;
+}
+
+.journey_card h2 {
+  margin: 0 0 1rem 0;
+  font-size: 1.5rem;
+}
+
+.journey_card p {
+  margin: 0;
+  font-size: 1.25rem;
+  line-height: 1.5;
 }
 
 @media (max-width: 990px) {
