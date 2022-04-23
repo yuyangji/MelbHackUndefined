@@ -1,5 +1,3 @@
-
-
 //GETS THE USER OF THE CURRENT SESSION
 async function getUser(callback) {
   const response = await fetch("/user");
@@ -9,7 +7,6 @@ async function getUser(callback) {
     callback(res);
   }
 }
-
 
 //LOGIN
 async function handleLogin(username, password, callback) {
@@ -34,7 +31,7 @@ async function handleLogin(username, password, callback) {
   }
 }
 
-//SIGN UP 
+//SIGN UP
 async function handleSignUp(username, password, callback) {
   console.log(username);
   console.log(password);
@@ -57,37 +54,38 @@ async function handleSignUp(username, password, callback) {
   }
 }
 
-
 async function logout(callback) {
-  
-    const response = await fetch("/auth/logout");
-    const result = await response.json();
-  
-    if (response.status === 200) {
-      callback(result);
-    }
+  const response = await fetch("/auth/logout");
+  const result = await response.json();
+
+  if (response.status === 200) {
+    callback(result);
   }
-  const getAllJourneys = async (setJourneys) => {
-    var res = [];
-    const response = await fetch("/journey");
-    const json = await response.json();
-    Object.keys(json).map((data) => res.push(json[data]));
-    setJourneys(res);
-  };
-  
-  const getSavedJourneys = async (setJourneys) => {
-    var res = [];
-    const response = await fetch("/user/savedJourneys");
-    const json = await response.json();
-    if (json.status == 500) {
-      return;
-    }
-    Object.keys(json).map((data) => res.push(json[data]));
-    setJourneys(res);
-    return res;
-  };
-  
+}
+const getAllJourneys = async (setJourneys) => {
+  var res = [];
+  const response = await fetch("/journey");
+  const json = await response.json();
+  Object.keys(json).map((data) => res.push(json[data]));
+  setJourneys(res);
+};
 
+const getSavedJourneys = async (setJourneys) => {
+  var res = [];
+  const response = await fetch("/user/savedJourneys");
+  const json = await response.json();
+  if (json.status === 500) {
+    return;
+  }
+  Object.keys(json).map((data) => res.push(json[data]));
+  setJourneys(res);
+  return res;
+};
 
-
-module.exports = { getUser, handleSignUp, handleLogin, getAllJourneys, getSavedJourneys };
+module.exports = {
+  getUser,
+  handleSignUp,
+  handleLogin,
+  getAllJourneys,
+  getSavedJourneys,
+};

@@ -1,21 +1,24 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { Button, Modal } from "react-bootstrap";
 
 function SignupModal({ show, setShow, signUpHandler }) {
-
-  const [username, setUsername] = useState("")
-  const [password, setPassword] = useState("")
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
   function onClickSignUp(e) {
-   e.preventDefault();
-  if (username != "" && password != ""){
-    signUpHandler(username, password) 
+    e.preventDefault();
+    if (username !== "" && password !== "") {
+      signUpHandler(username, password);
+    }
   }
-   
- }
 
   return (
-    <Modal show={show} onHide = {setShow} className="modalBackground hidden" id="signupModal">
+    <Modal
+      show={show}
+      onHide={setShow}
+      className="modalBackground hidden"
+      id="signupModal"
+    >
       <Modal.Body>
         <div className="modalContent">
           <form>
@@ -27,7 +30,7 @@ function SignupModal({ show, setShow, signUpHandler }) {
                   type="text"
                   name="signup_username"
                   id="signup_username"
-                  onChange = {(e)=> setUsername(e.currentTarget.value)}
+                  onChange={(e) => setUsername(e.currentTarget.value)}
                 />
               </p>
               <p>
@@ -36,14 +39,12 @@ function SignupModal({ show, setShow, signUpHandler }) {
                   type="text"
                   name="signup_password"
                   id="signup_password"
-                  onChange = {(e)=> setPassword(e.currentTarget.value)}
+                  onChange={(e) => setPassword(e.currentTarget.value)}
                 />
               </p>
             </div>
             <div className="modalContent_btnContainer">
-              <Button type="submit" value="signup" 
-                onClick= {onClickSignUp}
-              >
+              <Button type="submit" value="signup" onClick={onClickSignUp}>
                 Signup
               </Button>
 
@@ -51,7 +52,7 @@ function SignupModal({ show, setShow, signUpHandler }) {
                 type="button"
                 variant="outline-primary"
                 value="closeModal"
-                onClick={()=>setShow(false)}
+                onClick={() => setShow(false)}
               >
                 Close
               </Button>
