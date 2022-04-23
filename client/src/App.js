@@ -8,30 +8,34 @@ import SavedJourneyPage from "./components/SavedJourneyPage";
 import userData from "./dummyUser.json";
 import LoggedHeader from "./components/shared/LoggedHeader";
 import Header from "./components/shared/Header";
-import {getUser, handleSignUp, handleLogin, getAllJourneys, getSavedJourneys } from "./controllers/clientController"
-
+import {
+  getUser,
+  handleSignUp,
+  handleLogin,
+  getAllJourneys,
+  getSavedJourneys,
+} from "./controllers/clientController";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
   useEffect(() => {
     getAllJourneys(setJourneyList);
     getSavedJourneys(setSavedJourneys);
-    getUser(setUserCallback)
+    getUser(setUserCallback);
   }, []);
 
-
   const setUserCallback = (user) => {
-      setLogged(true);
-      setUsername(user.username);
-  }
+    setLogged(true);
+    setUsername(user.username);
+  };
 
-  const onClickLogin = (username, password)=>{
-    handleLogin(username, password,setUserCallback);
-  }
+  const onClickLogin = (username, password) => {
+    handleLogin(username, password, setUserCallback);
+  };
 
   const onClickSignUp = (username, password) => {
-    handleSignUp(username, password,setUserCallback);
-  }
-
+    handleSignUp(username, password, setUserCallback);
+  };
 
   // Global variables passing around
   const [isLoggedIn, setLogged] = useState(false);
@@ -39,33 +43,60 @@ function App() {
   const [journeyList, setJourneyList] = useState([]);
   const [savedJourneys, setSavedJourneys] = useState([]);
   return (
-    <div>
-      {isLoggedIn ? (
-        <LoggedHeader username={username} />
-      ) : (
-        <Header handleLogin={onClickLogin} handleSignUp={onClickSignUp} />
-      )}
-      {/* <div className = 'formPage'>
+    <Router>
+      <div>
+        {isLoggedIn ? (
+          <LoggedHeader username={username} />
+        ) : (
+          <Header handleLogin={onClickLogin} handleSignUp={onClickSignUp} />
+        )}
+        {/* <div className = 'formPage'>
       <Form />
       </div> */}
+        <Routes>
+          <Route
+            exact
+            path="/"
+            element={
+              <Homepage
+                isLoggedIn={isLoggedIn}
+                username={username}
+                allJourney={journeyList}
+                savedJourney={savedJourneys}
+              />
+            }
+          ></Route>
 
-      {/* 
-    // Homepage when logged in */}
-      <Homepage
-        isLoggedIn={isLoggedIn}
-        username={username}
-        allJourney={journeyList}
-        savedJourney={savedJourneys}
-      />
+          <Route
+            exact
+            path="/saved"
+            element={
+              <SavedJourneyPage
+                isLoggedIn={isLoggedIn}
+                username={username}
+                journeyList={journeyList}
+                savedList={userData.saved_journey}
+              />
+            }
+          ></Route>
 
-      {/* <SavedJourneyPage
-      isLoggedIn={isLoggedIn}
-      username={username}
-      journeyList={journeyList}
-      savedList={userData.saved_journey}
-    /> */}
-      {/* <ProgressBar data={data} setData={setData} />; */}
-    </div>
+          {/* <Homepage
+            isLoggedIn={isLoggedIn}
+            username={username}
+            allJourney={journeyList}
+            savedJourney={savedJourneys}
+          /> */}
+        </Routes>
+
+        {/* <SavedJourneyPage
+          isLoggedIn={isLoggedIn}
+          username={username}
+          journeyList={journeyList}
+          savedList={userData.saved_journey}
+        /> */}
+        {/* <ProgressBar data={data} setData={setData} />; */}
+      </div>
+    </Router>
   );
 }
 
