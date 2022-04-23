@@ -131,5 +131,24 @@
         "description": "It's free, so why not?! \nThey are having hackathon this year as well, the theme is about eduTech. Its free and its a good chance to gain experience! \nSee here: https://coherent-tartan-183.notion.site/Participants-Handbook-dc64e20afd2d415bab3f31d2d4c3e3cd"
       }
     ]
+  },
+  {
+    "journey_id": "000020",
+    "title": "C++ Learning Journey for Beginner",
+    "creator": "jackyy99",
+    "milestone": [
+      {
+        "title": "Best Youtube tutorial for beginner",
+        "description": "This video is the MOST beginner friendly C++ tutorial I have found so far. \n Link: www.youtube.com"
+      },
+      {
+        "title": "Try building a little website with C++",
+        "description": "After watching the video, building a static website with C++ should be fairly easy."
+      },
+      {
+        "title": "Join Melb Hack to test your skill",
+        "description": "It's free, so why not?! \nThey are having hackathon this year as well, the theme is about eduTech. Its free and its a good chance to gain experience! \nSee here: https://coherent-tartan-183.notion.site/Participants-Handbook-dc64e20afd2d415bab3f31d2d4c3e3cd"
+      }
+    ]
   }
 ]

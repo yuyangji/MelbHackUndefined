@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useState } from "react";
 import Homepage from "./components/Homepage";
@@ -7,7 +8,7 @@ import userData from "./dummyUser.json";
 
 function App() {
   // Global variables passing around
-  const [isLoggedIn, setLogged] = useState(true);
+  const [isLoggedIn, setLogged] = useState(false);
   const [username, setUsername] = useState(userData.username);
 
   return (
@@ -22,7 +23,7 @@ function App() {
     // Saved Journeys Page
     <SavedJourneyPage
       isLoggedIn={isLoggedIn}
-      username={userData.username}
+      username={username}
       journeyList={journeyList}
       savedList={userData.saved_journey}
     />
