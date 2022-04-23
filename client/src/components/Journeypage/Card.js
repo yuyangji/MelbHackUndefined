@@ -6,8 +6,8 @@ import styles from "../../styles/Journey.module.css";
 const Card = ({ current, setProgress }) => {
 
   return (
-    <div className={styles.journey_cards_container}>
-      <div className={styles.journey_card}>
+    <div className={styles.container}>
+      <div className={styles.card}>
         <div>
           <div
             style={{

@@ -14,12 +14,11 @@ function CreateForm() {
     e.preventDefault();
     let milestoneArray = [];
     milestones.map(function (milestone, idx) {
-      const milestoneObj = {
+      milestoneArray.push({
         step_no: idx,
         title: milestone.title,
         content: milestone.content,
-      };
-      milestoneArray.push({ milestoneObj });
+      });
     });
     console.log(milestoneArray);
     FormController.publishJourney(title, milestoneArray);

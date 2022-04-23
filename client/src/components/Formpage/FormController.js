@@ -9,8 +9,8 @@ async function publishJourney(title, milestones){
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      milestones,
-      title
+      milestones:milestones,
+      title:title,
     }),
   });
 
