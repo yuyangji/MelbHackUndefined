@@ -9,6 +9,7 @@ import { getJourney } from "../../controllers/clientController";
 const ProgressBar = ({ journeyList }) => {
   // id of the journey
   const { id } = useParams();
+  console.log(id);
 
   useEffect(() => {
     getJourney(setJourney, id);

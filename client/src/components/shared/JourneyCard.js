@@ -7,6 +7,7 @@ import {
   BsBook,
   BsBookmarkFill,
 } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 const JourneyCard = ({ journey, savedList }) => {
   var temp = false;
@@ -18,12 +19,13 @@ const JourneyCard = ({ journey, savedList }) => {
   }
   const [isSaved] = useState(temp);
 
-  const linkHref = "/journey/" + journey._id;
-
   return (
     <>
       <div style={{ marginBottom: "15px" }}>
-        <a style={{ textDecoration: "none", color: "inherit" }} href={linkHref}>
+        <Link
+          style={{ textDecoration: "none", color: "inherit" }}
+          to={"/journey/" + journey._id}
+        >
           <Card
             body
             style={{ minWidth: "780px", maxWidth: "890px", width: "780px" }}
@@ -88,7 +90,7 @@ const JourneyCard = ({ journey, savedList }) => {
               </Col>
             </Row>
           </Card>
-        </a>
+        </Link>
       </div>
     </>
   );
