@@ -44,8 +44,11 @@ function App() {
   return (
     <div>
       <ChakraProvider>
-      <Homepage />
-        {/* <ProgressBar data={data} setData={setData} />; */}
+
+      <Form />
+
+      {/* <Homepage /> */}
+      {/* <ProgressBar data={data} setData={setData} />; */}
       </ChakraProvider>
     </div>
   );

@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
 import MilestoneInput from "./Milestone";
+import Button from 'react-bootstrap/Button'
 import axios from "axios";
 
 
@@ -84,25 +85,38 @@ function Form(){
     
     //Below returns the milestone-creation form
     return (
-        <form onSubmit={submitCreateTimeline}>
-            <h1>Create a timeline</h1>
-            <p>
-                <label>Title: </label>
+        <form onSubmit={submitCreateTimeline} className='formContainer'>
+
+            <h1>Create a Journey</h1>
+            <p className='form_journeyTitle'>
+                <label>Journey Title: </label>
                 <input type="text" required="requried" name="title" id="timeline-title" placeholder="e.g. Python"/>
             </p>
 
             <div id='milestone_container'>
             {numOfMilestones.map(function(milestone){
-                return <MilestoneInput name={"milestone"} number={milestone} key={milestone} id={milestone}/>
+                return <MilestoneInput 
+                name={"milestone"} 
+                number={milestone} 
+                key={milestone} 
+                id={milestone}/>
                 })
             }
             </div>
 
-            <p><button type="button" value="addMilestone" id="addMilestone" onClick={handleAddMilestone}>
+            <p><Button 
+            type="button" 
+            value="addMilestone" 
+            id="addMilestone" 
+            onClick={handleAddMilestone}
+            variant="outline-primary">
                 Add milestone
-            </button></p>
+            </Button></p>
 
-            <p><input type="submit" value="Create Timeline" /></p>
+            <p><Button 
+            type="submit" 
+            value="createTimeline"
+            id="createTimeline">Create Journey</Button></p>
         </form>
     )
 }
