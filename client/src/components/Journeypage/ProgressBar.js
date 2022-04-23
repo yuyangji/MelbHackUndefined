@@ -93,6 +93,7 @@ const ProgressBar = ({ journeyList }) => {
                   }else{
                     if(index < latestProgress){
                       setLatestProgress(index)
+                      setProgress((index / (data.length + 1)) * 100);
                     }
                   }
                  
