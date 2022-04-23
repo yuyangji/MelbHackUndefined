@@ -3,7 +3,7 @@ const router = express.Router()
 const UserController = require('../controllers/userController')
 
 
-router.get('/savedJourneys', UserController.getMyJourneys)
+router.get('/savedJourneys', UserController.getSavedJourneys)
 
 router.get('/', UserController.getUser)
 

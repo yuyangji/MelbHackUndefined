@@ -1,6 +1,8 @@
 const User = require("../models/user");
 const Journey = require("../models/journey")
-const getMyJourneys = async (req, res) => {
+
+
+const getSavedJourneys = async (req, res) => {
   let user_id = req.session.user_id;
   if (user_id) {
     try {
@@ -19,7 +21,7 @@ const getUser = async (req, res) => {
   if (user_id) {
     try {
       const user = await User.findOne({ _id: user_id });
-      res.json(user);
+      res.status(201).json(user);
     } catch (err) {
       res.status(500).json({ message: err.message });
     }
@@ -48,4 +50,4 @@ const saveJourney = async (req, res) => {
   }
 };
 
-module.exports = { getMyJourneys, getUser, saveJourney };
+module.exports = { getSavedJourneys, getUser, saveJourney };

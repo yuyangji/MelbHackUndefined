@@ -14,7 +14,7 @@ import { useEffect, useState } from "react";
 
 let loginModal, signupModal;
 
-const Header = ({handleLogin}) => {
+const Header = ({handleLogin, handleSignUp}) => {
   const [showLogin, setShowLogin] = useState(false);
   const [showSignUp, setShowSignUp] = useState(false);
 
@@ -38,10 +38,6 @@ const Header = ({handleLogin}) => {
   function toggleSignupModal() {
     setShowSignUp(!showSignUp);
     console.log("clicked");
-  }
-
-  function closeBtn_SignupModal() {
-    signupModal.classList.add("hidden");
   }
 
 
@@ -107,7 +103,7 @@ const Header = ({handleLogin}) => {
       <SignupModal
         show={showSignUp}
         setShow={setShowSignUp}
-        closeBtnClick={closeBtn_SignupModal}
+        signUpHandler={(u, p) => handleSignUp(u, p)}
       />
     </>
   );

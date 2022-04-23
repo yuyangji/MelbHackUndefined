@@ -8,54 +8,30 @@ import SavedJourneyPage from "./components/SavedJourneyPage";
 import userData from "./dummyUser.json";
 import LoggedHeader from "./components/shared/LoggedHeader";
 import Header from "./components/shared/Header";
-const getAllJourneys = async (setJourneys) => {
-  var res = [];
-  const response = await fetch("/journey");
-  const json = await response.json();
-  Object.keys(json).map((data) => res.push(json[data]));
-  setJourneys(res);
-};
+import {getUser, handleSignUp, handleLogin, getAllJourneys, getSavedJourneys } from "./controllers/clientController"
 
-const getSavedJourneys = async (setJourneys) => {
-  var res = [];
-  const response = await fetch("/user/savedJourneys");
-  const json = await response.json();
-  if (json.status == 500) {
-    return;
-  }
-  Object.keys(json).map((data) => res.push(json[data]));
-  setJourneys(res);
-  return res;
-};
 
 function App() {
   useEffect(() => {
     getAllJourneys(setJourneyList);
     getSavedJourneys(setSavedJourneys);
+    getUser(setUserCallback)
   }, []);
 
-  async function handleLogin(username, password) {
-    console.log(username)
-    console.log(password)
 
-    const loginResult = await fetch("/auth/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        username: username,
-        password: password,
-      }),
-    });
-    const res = await loginResult.json();
-    console.log(res)
-
-    if (loginResult.status === 201) {
+  const setUserCallback = (user) => {
       setLogged(true);
-      setUsername(username);
-    }
+      setUsername(user.username);
   }
+
+  const onClickLogin = (username, password)=>{
+    handleLogin(username, password,setUserCallback);
+  }
+
+  const onClickSignUp = (username, password) => {
+    handleSignUp(username, password,setUserCallback);
+  }
+
 
   // Global variables passing around
   const [isLoggedIn, setLogged] = useState(false);
@@ -67,7 +43,7 @@ function App() {
       {isLoggedIn ? (
         <LoggedHeader username={username} />
       ) : (
-        <Header handleLogin={handleLogin} />
+        <Header handleLogin={onClickLogin} handleSignUp={onClickSignUp} />
       )}
       {/* <div className = 'formPage'>
       <Form />
@@ -79,7 +55,7 @@ function App() {
         isLoggedIn={isLoggedIn}
         username={username}
         allJourney={journeyList}
-        savedJourney={userData.saved_journey}
+        savedJourney={savedJourneys}
       />
 
       {/* <SavedJourneyPage
