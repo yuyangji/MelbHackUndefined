@@ -1,13 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import Header from "../shared/Header";
 import JourneyCardList from "../shared/JourneyCardList";
 import LoggedHeader from "../shared/LoggedHeader";
 
-const Homepage = () => {
-  // Global variables passing around
-  const [isLoggedIn, setLogged] = useState(false);
-  const [username, setUsername] = useState("john_smith_123");
-
+const Homepage = ({ isLoggedIn, username, allJourney, savedJourney }) => {
   return (
     <>
       {isLoggedIn ? <LoggedHeader username={username} /> : <Header />}
@@ -26,7 +22,12 @@ const Homepage = () => {
           }}
         >
           <div>
-            <JourneyCardList style={{ display: "block" }} />
+            <JourneyCardList
+              style={{ display: "block" }}
+              journeyList={allJourney}
+              savedList={savedJourney}
+              listTitle="All Journeys"
+            />
           </div>
         </div>
       </div>

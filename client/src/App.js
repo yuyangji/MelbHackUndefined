@@ -1,10 +1,11 @@
+
 import React from "react";
 import Homepage from "./components/Homepage";
 import Form from "./components/Formpage/Form";
 import ProgressBar from "./components/Journeypage/ProgressBar";
 import { ChakraProvider } from "@chakra-ui/react";
 import styles from '../src/styles/styles.css'
-
+import SavedJourneyPage from "./components/SavedJourneyPage";
 import "bootstrap/dist/css/bootstrap.min.css";
 import LoginModal from "./components/shared/Login";
 import SignupModal from "./components/shared/Signup";
@@ -49,12 +50,26 @@ function App() {
       <Form />
       </div> */}
      
+{/* 
+    // Homepage when logged in */}
+     <Homepage
+      isLoggedIn={isLoggedIn}
+      username={username}
+      allJourney={journeyList}
+      savedJourney={userData.saved_journey}
+    />
 
-      <Homepage />
+
+    {/* <SavedJourneyPage
+      isLoggedIn={isLoggedIn}
+      username={username}
+      journeyList={journeyList}
+      savedList={userData.saved_journey}
+    /> */}
       {/* <ProgressBar data={data} setData={setData} />; */}
       </ChakraProvider>
     </div>
-  );
-}
+
+  )}
 
 export default App;
