@@ -1,16 +1,17 @@
-import React, { useState } from "react";
-import Header from "../shared/Header";
-import JourneyCardList from "../shared/JourneyCardList";
-import LoggedHeader from "../shared/LoggedHeader";
+import React, {useEffect} from "react";
 
-const Homepage = () => {
-  // Global variables passing around
-  const [isLoggedIn, setLogged] = useState(false);
-  const [username, setUsername] = useState("john_smith_123");
+import JourneyCardList from "../shared/JourneyCardList";
+
+
+
+const Homepage = ({ isLoggedIn, username, allJourney, savedJourney }) => {
+
+
+
 
   return (
     <>
-      {isLoggedIn ? <LoggedHeader username={username} /> : <Header />}
+    
 
       {/* Layout placed under header */}
       <div style={{ minWidth: "100vw", minHeight: `calc(100vh - 56px)` }}>
@@ -26,7 +27,12 @@ const Homepage = () => {
           }}
         >
           <div>
-            <JourneyCardList style={{ display: "block" }} />
+            <JourneyCardList
+              style={{ display: "block" }}
+              journeyList={allJourney}
+              savedList={savedJourney}
+              listTitle="All Journeys"
+            />
           </div>
         </div>
       </div>

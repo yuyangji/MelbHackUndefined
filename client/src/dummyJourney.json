@@ -1,0 +1,154 @@
+[
+  {
+    "journey_id": "000001",
+    "title": "Python Learning Journey for Beginner",
+    "creator": "john_smith",
+    "milestone": [
+      {
+        "title": "Best Youtube tutorial for beginner",
+        "description": "This video is the MOST beginner friendly Python tutorial I have found so far. \n Link: www.youtube.com"
+      },
+      {
+        "title": "Try building a little application with python",
+        "description": "After watching the video, building a tic tac toe game with python should be fairly easy."
+      },
+      {
+        "title": "Join Melb Hack to test your skill",
+        "description": "It's free, so why not?! \nThey are having hackathon this year as well, the theme is about eduTech. Its free and its a good chance to gain experience! \nSee here: https://coherent-tartan-183.notion.site/Participants-Handbook-dc64e20afd2d415bab3f31d2d4c3e3cd"
+      }
+    ]
+  },
+  {
+    "journey_id": "000002",
+    "title": "Instagram learning for grandma",
+    "creator": "johnny_smith",
+    "milestone": [
+      {
+        "title": "Install the application",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tellus leo, lobortis nec lorem eget, consequat malesuada erat. Curabitur nec volutpat ex."
+      },
+      {
+        "title": "Create account for grandma",
+        "description": "Phasellus sed egestas odio, a iaculis nisl. Donec nec mi facilisis, ornare mi in, semper velit. Donec ultricies dui non nunc gravida molestie."
+      },
+      {
+        "title": "Post her first photo!",
+        "description": "Mauris id pulvinar quam. Etiam pellentesque consequat sem, vel imperdiet orci."
+      },
+      {
+        "title": "Add friends and family",
+        "description": "Mauris id pulvinar quam. Etiam pellentesque consequat sem, vel imperdiet orci."
+      }
+    ]
+  },
+  {
+    "journey_id": "000003",
+    "title": "Learning SQL yourself",
+    "creator": "consciousBit110",
+    "milestone": [
+      {
+        "title": "Check this textbook out",
+        "description": "Praesent sagittis diam ut libero scelerisque, sed vehicula odio pharetra. Nunc quis nisl vitae neque venenatis blandit a at lectus. In nec tempor enim."
+      },
+      {
+        "title": "Set up and test yourself",
+        "description": "Aliquam nec libero quis arcu viverra tempor. Aenean ac eros magna. Vivamus luctus sit amet enim vel dictum. "
+      }
+    ]
+  },
+  {
+    "journey_id": "000004",
+    "title": "Bootstrap for absolute beginner",
+    "creator": "wahahahaha",
+    "milestone": [
+      {
+        "title": "Join the free course in Udemy",
+        "description": "The course is free recently and only takes 3 hours to complete."
+      },
+      {
+        "title": "Read the documentation of bootstrap",
+        "description": "Read it yourself and try to understand it."
+      },
+      {
+        "title": "Play around with codepen",
+        "description": "Suspendisse pulvinar semper diam. Vivamus ultrices sed sem quis eleifend. Nam pharetra tortor eu sem suscipit cursus. Nulla lacus felis, tincidunt non diam quis, iaculis dignissim mi."
+      }
+    ]
+  },
+  {
+    "journey_id": "000005",
+    "title": "Wanna self-learn piano?",
+    "creator": "beethoven2th",
+    "milestone": [
+      {
+        "title": "Practice piano fingering exercise",
+        "description": "HANON The Virtuoso Exercise is a must buy for beginner to build your piano skill. Piano fingering is one of the most crucial aspects of learning the instrument, yet it is among the most overlooked."
+      },
+      {
+        "title": "Learn the music theory",
+        "description": "Phasellus sed egestas odio, a iaculis nisl. Donec nec mi facilisis, ornare mi in, semper velit. Donec ultricies dui non nunc gravida molestie."
+      },
+      {
+        "title": "Join ABRSM exam",
+        "description": "Vivamus finibus vel nisi quis ultricies."
+      }
+    ]
+  },
+  {
+    "journey_id": "000007",
+    "title": "Java Learning Journey for Beginner",
+    "creator": "undefined13029",
+    "milestone": [
+      {
+        "title": "Best Youtube tutorial for beginner",
+        "description": "This video is the MOST beginner friendly Java tutorial I have found so far. \n Link: www.youtube.com"
+      },
+      {
+        "title": "Try building a little application with Java",
+        "description": "After watching the video, building a tic tac toe game with Java should be fairly easy."
+      },
+      {
+        "title": "Join Melb Hack to test your skill",
+        "description": "It's free, so why not?! \nThey are having hackathon this year as well, the theme is about eduTech. Its free and its a good chance to gain experience! \nSee here: https://coherent-tartan-183.notion.site/Participants-Handbook-dc64e20afd2d415bab3f31d2d4c3e3cd"
+      }
+    ]
+  },
+  {
+    "journey_id": "000008",
+    "title": "HTML Learning Journey for Beginner",
+    "creator": "satoshi_nakamoto",
+    "milestone": [
+      {
+        "title": "Best Youtube tutorial for beginner",
+        "description": "This video is the MOST beginner friendly HTML tutorial I have found so far. \n Link: www.youtube.com"
+      },
+      {
+        "title": "Try building a little website with HTML",
+        "description": "After watching the video, building a static website with HTML should be fairly easy."
+      },
+      {
+        "title": "Join Melb Hack to test your skill",
+        "description": "It's free, so why not?! \nThey are having hackathon this year as well, the theme is about eduTech. Its free and its a good chance to gain experience! \nSee here: https://coherent-tartan-183.notion.site/Participants-Handbook-dc64e20afd2d415bab3f31d2d4c3e3cd"
+      }
+    ]
+  },
+  {
+    "journey_id": "000020",
+    "title": "C++ Learning Journey for Beginner",
+    "creator": "jackyy99",
+    "milestone": [
+      {
+        "title": "Best Youtube tutorial for beginner",
+        "description": "This video is the MOST beginner friendly C++ tutorial I have found so far. \n Link: www.youtube.com"
+      },
+      {
+        "title": "Try building a little website with C++",
+        "description": "After watching the video, building a static website with C++ should be fairly easy."
+      },
+      {
+        "title": "Join Melb Hack to test your skill",
+        "description": "It's free, so why not?! \nThey are having hackathon this year as well, the theme is about eduTech. Its free and its a good chance to gain experience! \nSee here: https://coherent-tartan-183.notion.site/Participants-Handbook-dc64e20afd2d415bab3f31d2d4c3e3cd"
+      }
+    ]
+  }
+]

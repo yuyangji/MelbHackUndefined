@@ -1,8 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import { Card, Row, Col } from "react-bootstrap";
-import { BsPersonCircle, BsBookmark, BsChatLeft, BsBook } from "react-icons/bs";
+import {
+  BsPersonCircle,
+  BsBookmark,
+  BsChatLeft,
+  BsBook,
+  BsBookmarkFill,
+} from "react-icons/bs";
 
-const JourneyCard = () => {
+const JourneyCard = ({ journey, savedList }) => {
+  var temp = false;
+  for (let saved in savedList) {
+    if (savedList[saved].journey_id === journey.journey_id) {
+      temp = true;
+      break;
+    }
+  }
+  const [isSaved] = useState(temp);
+
   return (
     <>
       <div style={{ marginBottom: "15px" }}>
@@ -11,7 +26,7 @@ const JourneyCard = () => {
           style={{ minWidth: "780px", maxWidth: "890px", width: "780px" }}
         >
           <Row>
-            <Col>
+            <Col style={{ fontWeight: "500" }}>
               <BsPersonCircle
                 style={{
                   width: "28px",
@@ -20,19 +35,20 @@ const JourneyCard = () => {
                   marginBottom: "5px",
                 }}
               />{" "}
-              {"Username"}
+              {journey.creator}
             </Col>
           </Row>
 
           <Row>
             <Col style={{ fontSize: "x-small", color: "grey" }}>
-              Posted 10 hours ago
+              {/* random for now until posting time is recorded */}
+              Posted {Math.ceil(Math.random() * 20)} hours ago
             </Col>
           </Row>
 
           <Row>
             <Col style={{ fontSize: "x-large", fontWeight: "bold" }}>
-              Python Learning Journey for Beginner
+              {journey.title}
             </Col>
           </Row>
 
@@ -40,217 +56,31 @@ const JourneyCard = () => {
             <Col style={{ fontSize: "small" }}>
               <div>
                 <div style={{ display: "inline", marginRight: "10px" }}>
-                  <BsBook style={{ marginRight: "4px" }} />5 Chapters
+                  <BsBook style={{ marginRight: "4px" }} />
+                  {journey.milestones.length} Chapters
                 </div>
                 <div style={{ display: "inline", marginRight: "10px" }}>
                   <BsChatLeft style={{ marginRight: "4px" }} />
-                  84 Discussion
+                  {/* random for now until comments are recorded */}
+                  {Math.ceil(Math.random() * 100)} Discussion
                 </div>
-                <div style={{ display: "inline", marginRight: "10px" }}>
-                  <BsBookmark style={{ marginRight: "4px" }} />
-                  Save
-                </div>
-              </div>
-            </Col>
-          </Row>
-        </Card>
-      </div>
-
-      <div style={{ marginBottom: "15px" }}>
-        <Card
-          body
-          style={{ minWidth: "780px", maxWidth: "890px", width: "780px" }}
-        >
-          <Row>
-            <Col>
-              <BsPersonCircle
-                style={{
-                  width: "28px",
-                  height: "28px",
-                  marginRight: "5px",
-                  marginBottom: "5px",
-                }}
-              />{" "}
-              {"Username"}
-            </Col>
-          </Row>
-
-          <Row>
-            <Col style={{ fontSize: "x-small", color: "grey" }}>
-              Posted 10 hours ago
-            </Col>
-          </Row>
-
-          <Row>
-            <Col style={{ fontSize: "x-large", fontWeight: "bold" }}>
-              Python Learning Journey for Beginner
-            </Col>
-          </Row>
-
-          <Row style={{ marginTop: "10px" }}>
-            <Col style={{ fontSize: "small" }}>
-              <div>
-                <div style={{ display: "inline", marginRight: "10px" }}>
-                  <BsBook style={{ marginRight: "4px" }} />5 Chapters
-                </div>
-                <div style={{ display: "inline", marginRight: "10px" }}>
-                  <BsChatLeft style={{ marginRight: "4px" }} />
-                  84 Discussion
-                </div>
-                <div style={{ display: "inline", marginRight: "10px" }}>
-                  <BsBookmark style={{ marginRight: "4px" }} />
-                  Save
-                </div>
-              </div>
-            </Col>
-          </Row>
-        </Card>
-      </div>
-      <div style={{ marginBottom: "15px" }}>
-        <Card
-          body
-          style={{ minWidth: "780px", maxWidth: "890px", width: "780px" }}
-        >
-          <Row>
-            <Col>
-              <BsPersonCircle
-                style={{
-                  width: "28px",
-                  height: "28px",
-                  marginRight: "5px",
-                  marginBottom: "5px",
-                }}
-              />{" "}
-              {"Username"}
-            </Col>
-          </Row>
-
-          <Row>
-            <Col style={{ fontSize: "x-small", color: "grey" }}>
-              Posted 10 hours ago
-            </Col>
-          </Row>
-
-          <Row>
-            <Col style={{ fontSize: "x-large", fontWeight: "bold" }}>
-              Python Learning Journey for Beginner
-            </Col>
-          </Row>
-
-          <Row style={{ marginTop: "10px" }}>
-            <Col style={{ fontSize: "small" }}>
-              <div>
-                <div style={{ display: "inline", marginRight: "10px" }}>
-                  <BsBook style={{ marginRight: "4px" }} />5 Chapters
-                </div>
-                <div style={{ display: "inline", marginRight: "10px" }}>
-                  <BsChatLeft style={{ marginRight: "4px" }} />
-                  84 Discussion
-                </div>
-                <div style={{ display: "inline", marginRight: "10px" }}>
-                  <BsBookmark style={{ marginRight: "4px" }} />
-                  Save
-                </div>
-              </div>
-            </Col>
-          </Row>
-        </Card>
-      </div>
-      <div style={{ marginBottom: "15px" }}>
-        <Card
-          body
-          style={{ minWidth: "780px", maxWidth: "890px", width: "780px" }}
-        >
-          <Row>
-            <Col>
-              <BsPersonCircle
-                style={{
-                  width: "28px",
-                  height: "28px",
-                  marginRight: "5px",
-                  marginBottom: "5px",
-                }}
-              />{" "}
-              {"Username"}
-            </Col>
-          </Row>
-
-          <Row>
-            <Col style={{ fontSize: "x-small", color: "grey" }}>
-              Posted 10 hours ago
-            </Col>
-          </Row>
-
-          <Row>
-            <Col style={{ fontSize: "x-large", fontWeight: "bold" }}>
-              Python Learning Journey for Beginner
-            </Col>
-          </Row>
-
-          <Row style={{ marginTop: "10px" }}>
-            <Col style={{ fontSize: "small" }}>
-              <div>
-                <div style={{ display: "inline", marginRight: "10px" }}>
-                  <BsBook style={{ marginRight: "4px" }} />5 Chapters
-                </div>
-                <div style={{ display: "inline", marginRight: "10px" }}>
-                  <BsChatLeft style={{ marginRight: "4px" }} />
-                  84 Discussion
-                </div>
-                <div style={{ display: "inline", marginRight: "10px" }}>
-                  <BsBookmark style={{ marginRight: "4px" }} />
-                  Save
-                </div>
-              </div>
-            </Col>
-          </Row>
-        </Card>
-      </div>
-      <div style={{ marginBottom: "15px" }}>
-        <Card
-          body
-          style={{ minWidth: "780px", maxWidth: "890px", width: "780px" }}
-        >
-          <Row>
-            <Col>
-              <BsPersonCircle
-                style={{
-                  width: "28px",
-                  height: "28px",
-                  marginRight: "5px",
-                  marginBottom: "5px",
-                }}
-              />{" "}
-              {"Username"}
-            </Col>
-          </Row>
-
-          <Row>
-            <Col style={{ fontSize: "x-small", color: "grey" }}>
-              Posted 10 hours ago
-            </Col>
-          </Row>
-
-          <Row>
-            <Col style={{ fontSize: "x-large", fontWeight: "bold" }}>
-              Python Learning Journey for Beginner
-            </Col>
-          </Row>
-
-          <Row style={{ marginTop: "10px" }}>
-            <Col style={{ fontSize: "small" }}>
-              <div>
-                <div style={{ display: "inline", marginRight: "10px" }}>
-                  <BsBook style={{ marginRight: "4px" }} />5 Chapters
-                </div>
-                <div style={{ display: "inline", marginRight: "10px" }}>
-                  <BsChatLeft style={{ marginRight: "4px" }} />
-                  84 Discussion
-                </div>
-                <div style={{ display: "inline", marginRight: "10px" }}>
-                  <BsBookmark style={{ marginRight: "4px" }} />
-                  Save
-                </div>
+                {isSaved ? (
+                  <div
+                    style={{
+                      display: "inline",
+                      marginRight: "10px",
+                      color: "blue",
+                    }}
+                  >
+                    <BsBookmarkFill style={{ marginRight: "4px" }} />
+                    Saved
+                  </div>
+                ) : (
+                  <div style={{ display: "inline", marginRight: "10px" }}>
+                    <BsBookmark style={{ marginRight: "4px" }} />
+                    Save
+                  </div>
+                )}
               </div>
             </Col>
           </Row>

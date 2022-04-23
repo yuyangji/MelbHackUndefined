@@ -1,0 +1,14 @@
+{
+  "username": "jackyy999",
+  "saved_journey": [
+    {
+      "journey_id": "000007",
+      "progress": 0
+    },
+    {
+      "journey_id": "000008",
+      "progress": 1
+    },
+    { "journey_id": "000002", "progress": -1 }
+  ]
+}

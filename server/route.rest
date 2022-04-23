@@ -1,16 +1,16 @@
-GET http://localhost:3000/journey
+GET http://localhost:3001/journey
 
 ###
 
-GET http://localhost:3000/journey/6262872f58bafe6867a8cb98
+GET http://localhost:3001/journey/6262872f58bafe6867a8cb98
 
 
 ###
-POST http://localhost:3000/journey
+POST http://localhost:3001/journey
 Content-Type: application/json
 
 {
-    "title":"dd#",
+    "title":"another journey",
     "milestones": [
         {
             "step_no" : 1,
@@ -21,10 +21,10 @@ Content-Type: application/json
 }
 
 ###
-DELETE http://localhost:3000/journey/6262872f58bafe6867a8cb98
+DELETE http://localhost:3001/journey/6262872f58bafe6867a8cb98
 
 ###
-PATCH http://localhost:3000/journey/6262830102a631c24979743c
+PATCH http://localhost:3001/journey/6262830102a631c24979743c
 Content-Type: application/json
 
 {
@@ -32,7 +32,7 @@ Content-Type: application/json
 }
 // AUTHENTICATION
 ###
-POST http://localhost:3000/auth/register
+POST http://localhost:3001/auth/register
 Content-Type: application/json
 
 {
@@ -43,7 +43,7 @@ Content-Type: application/json
 
 ###
 
-POST http://localhost:3000/auth/login
+POST http://localhost:3001/auth/login
 Content-Type: application/json
 
 {
@@ -53,17 +53,17 @@ Content-Type: application/json
 
 ###
 
-POST http://localhost:3000/auth/logout
+POST http://localhost:3001/auth/logout
 
 
 ###
 //USER
-GET http://localhost:3000/user/myJourneys
+GET http://localhost:3001/user/myJourneys
 
 ###
 
-GET http://localhost:3000/user
+GET http://localhost:3001/user
 
 
 ###
-PATCH http://localhost:3000/user/saveJourney/626360df244b359cf2f58718
+PATCH http://localhost:3001/user/saveJourney/626360df244b359cf2f58718

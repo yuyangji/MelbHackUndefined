@@ -42,9 +42,9 @@ const createJourney = async (req, res) => {
   try {
     //Try saving journey to mongo db.
     const newJourney = await journey.save();
-    res.status(201).json(newJourney);
+    return res.status(201).json(newJourney);
   } catch (err) {
-    res.status(400).json({ message: err.message });
+    return res.status(400).json({ message: err.message });
   }
 };
 
