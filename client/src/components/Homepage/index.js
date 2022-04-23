@@ -1,10 +1,22 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import JourneyCardList from "../shared/JourneyCardList";
 import homepagePic from "./images/homepage_pic.jpg";
 import { Button } from "react-bootstrap";
 
 const Homepage = ({ isLoggedIn, username, allJourney, savedJourney }) => {
   console.log(allJourney);
+  useEffect(() => {
+    setButtonText("Create a Journey")
+  },[])
+
+  const [buttonText, setButtonText] = useState("Create a Journey")
+  const handleCreateBtn = (e)=>{
+    if(!isLoggedIn){
+      e.preventDefault();
+      setButtonText("Please login!")
+    }
+  }
+
   return (
     <>
       {/* Layout placed under header */}
@@ -29,8 +41,9 @@ const Homepage = ({ isLoggedIn, username, allJourney, savedJourney }) => {
                 }}
                 id="createJourney_btn"
                 href="/create"
+                onClick = {handleCreateBtn}
               >
-                Create a Journey
+                {isLoggedIn ? "Create a Journey" : buttonText}
               </Button>
             </div>
           </div>

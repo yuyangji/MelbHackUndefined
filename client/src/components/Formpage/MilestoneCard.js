@@ -45,6 +45,7 @@ function MilestoneCard({ index, setMilestones, milestones }) {
       <div className="milestone_input_row">
         <label>Content</label>
         <textarea
+        
           name="milestoneContent[]"
           id={index}
           ref={content}

@@ -1,5 +1,11 @@
+
 .container {
     padding: 0 2rem;
+}
+
+
+.title {
+    font-weight: bold;
 }
 
 .card {
@@ -11,8 +17,8 @@
     background-color: #fafafaaa;
     border-radius: 10px;
     min-width: none;
-    max-width: 50rem;
-    min-height:25rem;
+    max-width: 65rem;
+    min-height:30rem;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 

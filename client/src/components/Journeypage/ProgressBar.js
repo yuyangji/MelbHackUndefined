@@ -34,7 +34,7 @@ const ProgressBar = ({ journeyList }) => {
   }, []);
 
   return (
-    <ChakraProvider>
+    <ChakraProvider >
       <div
         style={{
           width: "100%",
@@ -70,7 +70,15 @@ const ProgressBar = ({ journeyList }) => {
                 style={{ borderRadius: "50px" }}
                 key={`button${index}`}
                 shadow="md"
-                variantcolor="green"
+                variantcolor="white"
+                size='md'
+                height='48px'
+                width='200px'
+                border='2px'
+                bg = {currentIndex == index? 'rgba(39,157,71)': "rgb(86,79,203)" }
+                borderColor='blue.500'
+                _hover= {{ bg: 'rgba(39,157,71,1)' }}
+                color = "white"
                 onClick={() => {
                   setCurrentIndex(index);
                   handleClickNode(index);
