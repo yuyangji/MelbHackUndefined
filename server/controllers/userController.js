@@ -9,10 +9,10 @@ const getSavedJourneys = async (req, res) => {
       const user = await User.findOne({ _id: user_id });
       res.json(user.saved_journeys);
     } catch (err) {
-      res.status(500).json({ message: err.message });
+      return res.status(500).json({ message: err.message });
     }
   } else {
-    res.status(500).json({ message: "You are not logged in" });
+    return res.status(500).json({ message: "You are not logged in" });
   }
 };
 

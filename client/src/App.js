@@ -67,17 +67,17 @@ function App() {
         [{title: "random", content: "content"}]
       }  />
       </div> */}
-      <div className="formPage">
+      {/* <div className="formPage">
         <CreateForm />
-      </div>
+      </div> */}
       {/* 
     // Homepage when logged in */}
-      {/* <Homepage
+      <Homepage
         isLoggedIn={isLoggedIn}
         username={username}
         allJourney={journeyList}
         savedJourney={savedJourneys}
-      /> */}
+      />
 
       {/* <SavedJourneyPage
       isLoggedIn={isLoggedIn}

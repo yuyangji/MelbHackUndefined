@@ -80,7 +80,7 @@ async function logout(callback) {
     var res = [];
     const response = await fetch("/user/savedJourneys");
     const json = await response.json();
-    if (json.status == 500) {
+    if (response.status >= 400) {
       return;
     }
     Object.keys(json).map((data) => res.push(json[data]));
