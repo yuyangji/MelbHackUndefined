@@ -4,8 +4,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useState, useEffect } from "react";
 import Homepage from "./components/Homepage";
 import SavedJourneyPage from "./components/SavedJourneyPage";
-// import journeyList from "./dummyJourney.json";
-import userData from "./dummyUser.json";
 import LoggedHeader from "./components/shared/LoggedHeader";
 import Header from "./components/shared/Header";
 import {
@@ -39,7 +37,7 @@ function App() {
 
   // Global variables passing around
   const [isLoggedIn, setLogged] = useState(false);
-  const [username, setUsername] = useState(userData.username);
+  const [username, setUsername] = useState("");
   const [journeyList, setJourneyList] = useState([]);
   const [savedJourneys, setSavedJourneys] = useState([]);
   return (
@@ -71,7 +69,7 @@ function App() {
                 isLoggedIn={isLoggedIn}
                 username={username}
                 journeyList={journeyList}
-                savedList={userData.saved_journey}
+                savedList={savedJourneys}
               />
             }
           />
