@@ -17,6 +17,7 @@ const LoggedSavedJourneyPage = ({ username, journeyList, savedList }) => {
       }
     }
   }
+  console.log(myJourneyList);
 
   return (
     <>
