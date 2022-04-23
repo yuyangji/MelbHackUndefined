@@ -57,7 +57,7 @@ const JourneyCard = ({ journey, savedList }) => {
               <div>
                 <div style={{ display: "inline", marginRight: "10px" }}>
                   <BsBook style={{ marginRight: "4px" }} />
-                  {journey.milestone.length} Chapters
+                  {journey.milestones.length} Chapters
                 </div>
                 <div style={{ display: "inline", marginRight: "10px" }}>
                   <BsChatLeft style={{ marginRight: "4px" }} />

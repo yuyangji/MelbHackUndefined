@@ -6,6 +6,7 @@ const jwt = require("jsonwebtoken");
 const login = async (req, res) => {
   var username = req.body.username;
   var password = req.body.password;
+  
 
   try {
     //Check to see if can find user with username
@@ -26,7 +27,7 @@ const login = async (req, res) => {
       }
     } else {
       //No user found with given username.
-      res.status(404).json({ message: "username does not exist" });
+      return res.status(409).json({ message: "username does not exist" });
     }
   } catch (err) {
     res.status(400).json({ message: err.message });

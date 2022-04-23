@@ -6,31 +6,69 @@ import Homepage from "./components/Homepage";
 import SavedJourneyPage from "./components/SavedJourneyPage";
 // import journeyList from "./dummyJourney.json";
 import userData from "./dummyUser.json";
-
-const getAllJourneys = async () => {
-  var result = [];
+import LoggedHeader from "./components/shared/LoggedHeader";
+import Header from "./components/shared/Header";
+const getAllJourneys = async (setJourneys) => {
+  var res = [];
   const response = await fetch("/journey");
-  const body = await response.json();
-  console.log(body)
-  for(var item in body){
-    result.push(item)
+  const json = await response.json();
+  Object.keys(json).map((data) => res.push(json[data]));
+  setJourneys(res);
+};
+
+const getSavedJourneys = async (setJourneys) => {
+  var res = [];
+  const response = await fetch("/user/savedJourneys");
+  const json = await response.json();
+  if (json.status == 500) {
+    return;
   }
-  console.log(result)
-  return body;
+  Object.keys(json).map((data) => res.push(json[data]));
+  setJourneys(res);
+  return res;
 };
 
 function App() {
   useEffect(() => {
-    const journeys = getAllJourneys()
-    setJourneyList(journeys)
+    getAllJourneys(setJourneyList);
+    getSavedJourneys(setSavedJourneys);
   }, []);
 
+  async function handleLogin(username, password) {
+    console.log(username)
+    console.log(password)
+
+    const loginResult = await fetch("/auth/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        username: username,
+        password: password,
+      }),
+    });
+    const res = await loginResult.json();
+    console.log(res)
+
+    if (loginResult.status === 201) {
+      setLogged(true);
+      setUsername(username);
+    }
+  }
+
   // Global variables passing around
-  const [isLoggedIn, setLogged] = useState(true);
+  const [isLoggedIn, setLogged] = useState(false);
   const [username, setUsername] = useState(userData.username);
   const [journeyList, setJourneyList] = useState([]);
+  const [savedJourneys, setSavedJourneys] = useState([]);
   return (
     <div>
+      {isLoggedIn ? (
+        <LoggedHeader username={username} />
+      ) : (
+        <Header handleLogin={handleLogin} />
+      )}
       {/* <div className = 'formPage'>
       <Form />
       </div> */}

@@ -1,16 +1,17 @@
 import React, {useEffect} from "react";
-import Header from "../shared/Header";
+
 import JourneyCardList from "../shared/JourneyCardList";
-import LoggedHeader from "../shared/LoggedHeader";
+
 
 
 const Homepage = ({ isLoggedIn, username, allJourney, savedJourney }) => {
 
 
 
+
   return (
     <>
-      {isLoggedIn ? <LoggedHeader username={username} /> : <Header />}
+    
 
       {/* Layout placed under header */}
       <div style={{ minWidth: "100vw", minHeight: `calc(100vh - 56px)` }}>

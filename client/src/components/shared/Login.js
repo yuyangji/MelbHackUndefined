@@ -1,40 +1,57 @@
-import React from 'react';
-import Button from 'react-bootstrap/Button'
+import React,{useState} from "react";
+import { Button, Modal } from "react-bootstrap";
 
-function LoginModal({signupBtnClick}){
+function LoginModal({ showSignUpModal, show, setShow, loginHandler }) {
 
-    function handleSignupBtn(){
-        signupBtnClick()
-    }
+    const [username, setUserName ] = useState("")
+    const [password, setPassword ] = useState("")
 
-    return(
-        <div className="modalBackground hidden" id="loginModal">
-            <div className="modalContent">
-                <form>
-                <h2>Login</h2>
-                <div className="modalContent_inputContainer">
-                    <p>
-                        <label>Username: </label>
-                        <input type="text" name="username" id="username" />
-                    </p>
-                    <p>
-                        <label>Password: </label>
-                        <input type="text" name="password" id="password" />
-                    </p>
-                </div>
-                <div className="modalContent_btnContainer">
+  function OnClickLogin(e) {
+    e.preventDefault()
+    loginHandler(username, password)
+  }
 
-                    <Button type="submit" value="login">Login</Button>
-
-                    <Button type="button" variant="outline-primary" value="openSignupModal"
-                    onClick={handleSignupBtn}>Sign Up</Button>
-                    
-                    
-                    </div>
-                </form>
+  return (
+    <Modal show={show} onHide = {setShow} className="modalBackground hidden" id="loginModal">
+      <Modal.Body>
+        <div className="modalContent">
+          <form>
+            <h2>Login</h2>
+            <div className="modalContent_inputContainer">
+              <p>
+                <label>Username</label>
+                <input 
+                onChange = {(e) => setUserName(e.currentTarget.value)}
+                type="text" name="username" id="username" />
+              </p>
+              <p>
+                <label>Password</label>
+                <input 
+                onChange = {(e) => setPassword(e.currentTarget.value)}
+                type="text" name="password" id="password" />
+              </p>
             </div>
+            <div className="modalContent_btnContainer">
+              <Button type="submit" value="login"
+                onClick = {OnClickLogin}
+              >
+                Login
+              </Button>
+
+              <Button
+                type="button"
+                variant="outline-primary"
+                value="openSignupModal"
+                onClick={showSignUpModal}
+              >
+                Sign Up
+              </Button>
+            </div>
+          </form>
         </div>
-        )
+      </Modal.Body>
+    </Modal>
+  );
 }
 
 export default LoginModal;
