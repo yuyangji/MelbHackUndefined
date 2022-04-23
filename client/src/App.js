@@ -53,7 +53,6 @@ function App() {
   const [journeyList, setJourneyList] = useState([]);
   const [savedJourneys, setSavedJourneys] = useState([]);
   return (
-
     <Router>
       <div>
         {isLoggedIn ? (
@@ -95,7 +94,6 @@ function App() {
         </Routes>
       </div>
     </Router>
-
   );
 }
 

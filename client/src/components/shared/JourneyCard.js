@@ -61,7 +61,13 @@ const JourneyCard = ({ journey, savedList }) => {
             <Row style={{ marginTop: "10px" }}>
               <Col style={{ fontSize: "small" }}>
                 <div>
-                  <div style={{ display: "inline", marginRight: "10px" }}>
+                  <div
+                    style={{
+                      display: "inline",
+                      marginRight: "10px",
+                      padding: "5px",
+                    }}
+                  >
                     <BsBook style={{ marginRight: "4px" }} />
                     {journey.milestones.length} Chapters
                   </div>
@@ -76,13 +82,31 @@ const JourneyCard = ({ journey, savedList }) => {
                         display: "inline",
                         marginRight: "10px",
                         color: "blue",
+                        padding: "5px",
+                      }}
+                      onClick={() => {
+                        console.log("Save clicked. replace this function");
                       }}
                     >
                       <BsBookmarkFill style={{ marginRight: "4px" }} />
                       Saved
                     </div>
                   ) : (
-                    <div style={{ display: "inline", marginRight: "10px" }}>
+                    <div
+                      style={{
+                        display: "inline",
+                        marginRight: "10px",
+                        padding: "5px",
+                        paddingBottom: "10px",
+                        borderRadius: "0.25rem",
+                      }}
+                      className="shared_journey_card"
+                      onClick={(event) => {
+                        event.preventDefault();
+                        event.preventDefault();
+                        console.log("Save clicked. replace this function");
+                      }}
+                    >
                       <BsBookmark style={{ marginRight: "4px" }} />
                       Save
                     </div>
