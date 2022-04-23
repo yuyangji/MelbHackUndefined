@@ -1,4 +1,4 @@
-import Form from "./components/Formpage/Form";
+import CreateForm from "./components/Formpage/CreateForm";
 import ProgressBar from "./components/Journeypage/ProgressBar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useState, useEffect } from "react";
@@ -12,8 +12,10 @@ import {
   handleLogin,
   getAllJourneys,
   getSavedJourneys,
+  logout,
 } from "./controllers/clientController";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import EditForm from "./components/Formpage/EditForm";
 
 function App() {
   useEffect(() => {
@@ -33,6 +35,15 @@ function App() {
 
   const onClickSignUp = (username, password) => {
     handleSignUp(username, password, setUserCallback);
+  };
+
+  const onClickLogOut = () => {
+    const logoutCallback = () => {
+      setLogged(false);
+      setUsername("");
+    };
+
+    logout(logoutCallback);
   };
 
   // Global variables passing around
@@ -73,7 +84,7 @@ function App() {
               />
             }
           />
-          <Route exact path="/create-journey" element={<Form />} />
+          <Route exact path="/create-journey" element={<CreateForm />} />
           <Route
             exact
             path="/journey/:id"

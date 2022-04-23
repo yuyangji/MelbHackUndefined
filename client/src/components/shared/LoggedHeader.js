@@ -10,7 +10,7 @@ import {
 } from "react-bootstrap";
 import { BsPersonCircle } from "react-icons/bs";
 
-const LoggedHeader = ({ username }) => {
+const LoggedHeader = ({ username, logout }) => {
   return (
     <>
       <Navbar bg="light" expand="lg">
@@ -32,6 +32,16 @@ const LoggedHeader = ({ username }) => {
                 />
                 <Button variant="outline-success">Search</Button>
               </Form>
+              <Button
+                variant="success"
+                style={{ 
+                  width: "150px",
+                  marginLeft: "10px"}}
+                id="createJourney_btn"
+                href="#create"
+              >
+                Create Journey
+              </Button>
             </Nav>
           </Navbar.Collapse>
           <Row style={{ heigh: "40px" }}>
@@ -39,6 +49,15 @@ const LoggedHeader = ({ username }) => {
               <BsPersonCircle style={{ width: "40px", height: "40px" }} />
             </Col>
             <Col style={{ margin: "auto" }}>{username}</Col>
+            <Col>
+              <Button
+                variant="outline-secondary"
+                style={{ whiteSpace: "nowrap" }}
+                onClick = {logout}
+              >
+                Log Out
+              </Button>
+            </Col>
           </Row>
         </Container>
       </Navbar>

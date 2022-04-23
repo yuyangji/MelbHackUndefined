@@ -61,7 +61,9 @@ const Header = ({ handleLogin, handleSignUp }) => {
               </Form>
               <Button
                 variant="success"
-                style={{ width: "150px" }}
+                style={{ 
+                  width: "150px",
+                marginLeft: "10px"}}
                 id="createJourney_btn"
                 href="/create-journey"
               >

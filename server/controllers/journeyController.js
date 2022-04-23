@@ -37,11 +37,13 @@ const createJourney = async (req, res) => {
   const journey = new Journey({
     title: req.body.title,
     author_id: user_id,
+    author_name:req.session.username,
     milestones: req.body.milestones,
   });
   try {
     //Try saving journey to mongo db.
     const newJourney = await journey.save();
+
     return res.status(201).json(newJourney);
   } catch (err) {
     return res.status(400).json({ message: err.message });

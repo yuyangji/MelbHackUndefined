@@ -55,13 +55,16 @@ async function handleSignUp(username, password, callback) {
 }
 
 async function logout(callback) {
-  const response = await fetch("/auth/logout");
+  const response = await fetch("/auth/logout", {
+    method: "POST",
+  });
   const result = await response.json();
-
+  console.log(result);
   if (response.status === 200) {
     callback(result);
   }
 }
+
 const getAllJourneys = async (setJourneys) => {
   var res = [];
   const response = await fetch("/journey");
@@ -96,5 +99,5 @@ module.exports = {
   handleLogin,
   getAllJourneys,
   getSavedJourneys,
-  getJourney,
+  logout,
 };
