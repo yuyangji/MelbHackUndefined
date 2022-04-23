@@ -84,7 +84,7 @@ function App() {
               />
             }
           />
-          <Route exact path="/create-journey" element={<CreateForm />} />
+          <Route exact path="/create" element={<CreateForm />} />
           <Route
             exact
             path="/journey/:id"

@@ -28,7 +28,7 @@ const Homepage = ({ isLoggedIn, username, allJourney, savedJourney }) => {
                   marginLeft: "10px",
                 }}
                 id="createJourney_btn"
-                href="#create"
+                href="/create"
               >
                 Create a Journey
               </Button>

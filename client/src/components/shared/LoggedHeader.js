@@ -34,11 +34,12 @@ const LoggedHeader = ({ username, logout }) => {
               </Form>
               <Button
                 variant="success"
-                style={{ 
+                style={{
                   width: "150px",
-                  marginLeft: "10px"}}
+                  marginLeft: "10px",
+                }}
                 id="createJourney_btn"
-                href="#create"
+                href="/create"
               >
                 Create Journey
               </Button>
@@ -53,7 +54,7 @@ const LoggedHeader = ({ username, logout }) => {
               <Button
                 variant="outline-secondary"
                 style={{ whiteSpace: "nowrap" }}
-                onClick = {logout}
+                onClick={logout}
               >
                 Log Out
               </Button>
