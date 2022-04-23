@@ -23,15 +23,15 @@ const ProgressBar = ({ journeyList }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   // const [isCompleted, setIsCompleted] = useState(false);
   const [progress, setProgress] = useState(0);
-  const [currentData, setCurrentData] = useState()
+  const [currentData, setCurrentData] = useState();
   const [latestProgress, setLatestProgress] = useState(-1);
-  const handleClickNode = (idx)=>{
-    setCurrentData(data[idx])
-  }
+  const handleClickNode = (idx) => {
+    setCurrentData(data[idx]);
+  };
 
-  useEffect(()=>{
-    setCurrentData(data[0])
-  },[])
+  useEffect(() => {
+    setCurrentData(data[0]);
+  }, []);
 
   return (
     <ChakraProvider>
@@ -85,28 +85,24 @@ const ProgressBar = ({ journeyList }) => {
                 key={`checkbox${item.id}`}
                 size="lg"
                 onChange={(e) => {
-                  if (e.target.checked){
-                    if(index > latestProgress){
-                      setLatestProgress(index)
-                      setProgress((index / (data.length + 1)) * 100);
+                  if (e.target.checked) {
+                    if (index > latestProgress) {
+                      setLatestProgress(index);
+                      setProgress((index / (data.length + 1)) * 150);
                     }
-                  }else{
-                    if(index < latestProgress){
-                      setLatestProgress(index)
-                      setProgress((index / (data.length + 1)) * 100);
+                  } else {
+                    if (index < latestProgress) {
+                      setLatestProgress(index);
+                      setProgress((index / (data.length + 1)) * 150);
                     }
                   }
-                 
                 }}
               ></Checkbox>
             </>
           ))}
         </ButtonGroup>
       </div>
-      <Card
-        current={currentData}
-        setProgress={setProgress}
-      />
+      <Card current={currentData} setProgress={setProgress} />
     </ChakraProvider>
   );
 };
