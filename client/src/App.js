@@ -45,7 +45,10 @@ function App() {
     <div>
       <ChakraProvider>
 
+      <div className = 'formPage'>
       <Form />
+      </div>
+     
 
       {/* <Homepage /> */}
       {/* <ProgressBar data={data} setData={setData} />; */}
