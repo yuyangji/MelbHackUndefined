@@ -88,12 +88,12 @@ const ProgressBar = ({ journeyList }) => {
                   if (e.target.checked) {
                     if (index > latestProgress) {
                       setLatestProgress(index);
-                      setProgress((index / (data.length + 1)) * 150);
+                      setProgress(((index + 1) / (data.length + 1)) * 100);
                     }
                   } else {
                     if (index < latestProgress) {
                       setLatestProgress(index);
-                      setProgress((index / (data.length + 1)) * 150);
+                      setProgress(((index + 1) / (data.length + 1)) * 100);
                     }
                   }
                 }}
