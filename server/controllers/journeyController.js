@@ -42,6 +42,7 @@ const createJourney = async (req, res) => {
   try {
     //Try saving journey to mongo db.
     const newJourney = await journey.save();
+
     return res.status(201).json(newJourney);
   } catch (err) {
     return res.status(400).json({ message: err.message });

@@ -18,7 +18,7 @@ const journeySchema = new Schema({
         content:String
     }]
 
-})
+}, {timestamps:true})
 
 const Journey = mongoose.model('Journey', journeySchema)
 
