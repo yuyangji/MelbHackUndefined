@@ -1,4 +1,4 @@
-import Form from "./components/Formpage/Form";
+import CreateForm from "./components/Formpage/CreateForm";
 import ProgressBar from "./components/Journeypage/ProgressBar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useState, useEffect } from "react";
@@ -8,30 +8,47 @@ import SavedJourneyPage from "./components/SavedJourneyPage";
 import userData from "./dummyUser.json";
 import LoggedHeader from "./components/shared/LoggedHeader";
 import Header from "./components/shared/Header";
-import {getUser, handleSignUp, handleLogin, getAllJourneys, getSavedJourneys } from "./controllers/clientController"
+import {
+  getUser,
+  handleSignUp,
+  handleLogin,
+  getAllJourneys,
+  getSavedJourneys,
+  logout
 
+} from "./controllers/clientController";
+import EditForm from "./components/Formpage/EditForm";
 
 function App() {
   useEffect(() => {
     getAllJourneys(setJourneyList);
     getSavedJourneys(setSavedJourneys);
-    getUser(setUserCallback)
+    getUser(setUserCallback);
   }, []);
 
-
   const setUserCallback = (user) => {
-      setLogged(true);
-      setUsername(user.username);
-  }
+    setLogged(true);
+    setUsername(user.username);
+  };
 
-  const onClickLogin = (username, password)=>{
-    handleLogin(username, password,setUserCallback);
-  }
+  const onClickLogin = (username, password) => {
+    handleLogin(username, password, setUserCallback);
+  };
 
   const onClickSignUp = (username, password) => {
-    handleSignUp(username, password,setUserCallback);
-  }
+    handleSignUp(username, password, setUserCallback);
+  };
 
+  
+  const onClickLogOut = () =>{
+    const logoutCallback = () =>{
+      setLogged(false);
+      setUsername("")
+    }
+
+    logout(logoutCallback);
+   
+  }
 
   // Global variables passing around
   const [isLoggedIn, setLogged] = useState(false);
@@ -41,22 +58,26 @@ function App() {
   return (
     <div>
       {isLoggedIn ? (
-        <LoggedHeader username={username} />
+        <LoggedHeader username={username} logout = {onClickLogOut} />
       ) : (
         <Header handleLogin={onClickLogin} handleSignUp={onClickSignUp} />
       )}
       {/* <div className = 'formPage'>
-      <Form />
+      <EditForm id = {123} savedMilestones = {
+        [{title: "random", content: "content"}]
+      }  />
       </div> */}
-
+      <div className="formPage">
+        <CreateForm />
+      </div>
       {/* 
     // Homepage when logged in */}
-      <Homepage
+      {/* <Homepage
         isLoggedIn={isLoggedIn}
         username={username}
         allJourney={journeyList}
         savedJourney={savedJourneys}
-      />
+      /> */}
 
       {/* <SavedJourneyPage
       isLoggedIn={isLoggedIn}

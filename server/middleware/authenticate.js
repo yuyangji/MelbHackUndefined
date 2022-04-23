@@ -14,7 +14,7 @@ const authenticate = (req, res, next) => {
     
 
   } catch (err) {
-    res.status(401).json({ message: "invalid token" });
+    return res.status(401).json({ message: "invalid token" });
   }
   return next();
 };
@@ -32,7 +32,7 @@ const checkDuplicateUsername = async (req, res, next) => {
     next();
   
   }catch(err){
-    res.status(400).json({ message: err.message });
+    return res.status(400).json({ message: err.message });
   }
 }
 

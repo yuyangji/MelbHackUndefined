@@ -5,11 +5,12 @@ const jwt = require("jsonwebtoken");
 //CREATE SESSION
 const createSession = (user, req, res)=>{
   let token = jwt.sign({ name: user.username }, process.env.TOKEN_KEY, {
-    expiresIn: "2h",
+    expiresIn: "48h",
   });
   //Cookie session variables.
   req.session.token = token;
   req.session.user_id = user._id;
+  req.session.username = user.username;
   res.status(201).json({ message: "logged in", token, user });
 }
 

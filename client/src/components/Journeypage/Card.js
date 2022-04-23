@@ -7,8 +7,8 @@ const Card = ({ current, data, setData, setProgress }) => {
   let item = data.find((item) => item.id === current);
 
   return (
-    <div className={styles.container}>
-      <div className={styles.card}>
+    <div className={styles.journey_cards_container}>
+      <div className={styles.journey_card}>
         <div>
           <div
             style={{
