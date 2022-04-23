@@ -10,7 +10,7 @@ import {
 } from "react-bootstrap";
 import { BsPersonCircle } from "react-icons/bs";
 
-const LoggedHeader = ({ username }) => {
+const LoggedHeader = ({ username, logout }) => {
   return (
     <>
       <Navbar bg="light" expand="lg">
@@ -53,6 +53,7 @@ const LoggedHeader = ({ username }) => {
               <Button
                 variant="outline-secondary"
                 style={{ whiteSpace: "nowrap" }}
+                onClick = {logout}
               >
                 Log Out
               </Button>

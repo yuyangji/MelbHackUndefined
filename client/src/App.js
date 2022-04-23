@@ -14,6 +14,8 @@ import {
   handleLogin,
   getAllJourneys,
   getSavedJourneys,
+  logout
+
 } from "./controllers/clientController";
 import EditForm from "./components/Formpage/EditForm";
 
@@ -37,6 +39,17 @@ function App() {
     handleSignUp(username, password, setUserCallback);
   };
 
+  
+  const onClickLogOut = () =>{
+    const logoutCallback = () =>{
+      setLogged(false);
+      setUsername("")
+    }
+
+    logout(logoutCallback);
+   
+  }
+
   // Global variables passing around
   const [isLoggedIn, setLogged] = useState(false);
   const [username, setUsername] = useState(userData.username);
@@ -45,7 +58,7 @@ function App() {
   return (
     <div>
       {isLoggedIn ? (
-        <LoggedHeader username={username} />
+        <LoggedHeader username={username} logout = {onClickLogOut} />
       ) : (
         <Header handleLogin={onClickLogin} handleSignUp={onClickSignUp} />
       )}
