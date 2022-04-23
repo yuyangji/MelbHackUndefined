@@ -14,7 +14,7 @@ import { useEffect, useState } from "react";
 
 let loginModal, signupModal;
 
-const Header = ({handleLogin, handleSignUp}) => {
+const Header = ({ handleLogin, handleSignUp }) => {
   const [showLogin, setShowLogin] = useState(false);
   const [showSignUp, setShowSignUp] = useState(false);
 
@@ -40,19 +40,17 @@ const Header = ({handleLogin, handleSignUp}) => {
     console.log("clicked");
   }
 
-
-
   return (
     <>
       <Navbar bg="light" expand="lg">
         <Container>
-          <Navbar.Brand style={{ fontWeight: "bold" }} href="/home">
+          <Navbar.Brand style={{ fontWeight: "bold" }} href="/">
             edJourney
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="/home">All Journeys</Nav.Link>
+              <Nav.Link href="/">All Journeys</Nav.Link>
               <Nav.Link href="/saved">Saved Journeys</Nav.Link>
               <Form className="d-flex">
                 <FormControl
