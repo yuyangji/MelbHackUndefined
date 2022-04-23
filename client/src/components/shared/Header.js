@@ -70,6 +70,10 @@ const Header = () => {
                 />
                 <Button variant="outline-success">Search</Button>
               </Form>
+              <Button variant="success"
+              style={{ width: "150px" }}
+              id="createJourney_btn"
+              href='#create'>Create Journey</Button>
             </Nav>
           </Navbar.Collapse>
           <Row>
