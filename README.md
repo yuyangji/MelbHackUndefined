@@ -14,3 +14,5 @@ cd server
 npm run devStart
 ```
 to connect to backend.
+
+`.env` file is needed to be located in `MelbHackUndefined/server/` folder to run the application.
