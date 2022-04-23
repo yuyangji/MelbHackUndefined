@@ -65,7 +65,7 @@ const Header = ({ handleLogin, handleSignUp }) => {
                 variant="success"
                 style={{ width: "150px" }}
                 id="createJourney_btn"
-                href="#create"
+                href="/create-journey"
               >
                 Create Journey
               </Button>
