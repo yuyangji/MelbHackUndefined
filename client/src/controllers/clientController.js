@@ -63,27 +63,26 @@ async function logout(callback) {
   if (response.status === 200) {
     callback(result);
   }
-  const getAllJourneys = async (setJourneys) => {
-    var res = [];
-    const response = await fetch("/journey");
-    const json = await response.json();
-    Object.keys(json).map((data) => res.push(json[data]));
-    setJourneys(res);
-  };
-  
-  const getSavedJourneys = async (setJourneys) => {
-    var res = [];
-    const response = await fetch("/user/savedJourneys");
-    const json = await response.json();
-    if (response.status >= 400) {
-      return;
-    }
-    Object.keys(json).map((data) => res.push(json[data]));
-    setJourneys(res);
-    return res;
-  };
-  
+}
+const getAllJourneys = async (setJourneys) => {
+  var res = [];
+  const response = await fetch("/journey");
+  const json = await response.json();
+  Object.keys(json).map((data) => res.push(json[data]));
+  setJourneys(res);
+};
 
+const getSavedJourneys = async (setJourneys) => {
+  var res = [];
+  const response = await fetch("/user/savedJourneys");
+  const json = await response.json();
+  if (response.status >= 400) {
+    return;
+  }
+  Object.keys(json).map((data) => res.push(json[data]));
+  setJourneys(res);
+  return res;
+};
 
 const getJourney = async (setJourney, id) => {
   console.log("called");
@@ -93,7 +92,6 @@ const getJourney = async (setJourney, id) => {
   setJourney(json);
 };
 
-
 module.exports = {
   getUser,
   handleSignUp,
@@ -101,5 +99,5 @@ module.exports = {
   getAllJourneys,
   getSavedJourneys,
   logout,
-  getJourney
-}
+  getJourney,
+};
