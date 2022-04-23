@@ -1,3 +1,9 @@
+/* Header */
+#createJourney_btn{
+  margin-left: 10px;
+}
+
+
 /* Index.js */
 .journeyTitle{
     font-size: 30px;
