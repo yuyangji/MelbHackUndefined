@@ -50,9 +50,6 @@ function App() {
         ) : (
           <Header handleLogin={onClickLogin} handleSignUp={onClickSignUp} />
         )}
-        {/* <div className = 'formPage'>
-      <Form />
-      </div> */}
         <Routes>
           <Route
             exact
@@ -65,8 +62,7 @@ function App() {
                 savedJourney={savedJourneys}
               />
             }
-          ></Route>
-
+          />
           <Route
             exact
             path="/saved"
@@ -78,22 +74,14 @@ function App() {
                 savedList={userData.saved_journey}
               />
             }
-          ></Route>
-
-          {/* <Homepage
-            isLoggedIn={isLoggedIn}
-            username={username}
-            allJourney={journeyList}
-            savedJourney={savedJourneys}
-          /> */}
+          />
+          <Route exact path="/create-journey" element={<Form />} />
+          <Route exact path="/journey/:id" element={<ProgressBar />} />
         </Routes>
 
-        {/* <SavedJourneyPage
-          isLoggedIn={isLoggedIn}
-          username={username}
-          journeyList={journeyList}
-          savedList={userData.saved_journey}
-        /> */}
+        {/* <div className = 'formPage'>
+      <Form />
+      </div> */}
         {/* <ProgressBar data={data} setData={setData} />; */}
       </div>
     </Router>
