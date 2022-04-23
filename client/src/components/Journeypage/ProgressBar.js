@@ -24,6 +24,16 @@ const ProgressBar = ({ journeyList }) => {
   // const [isCompleted, setIsCompleted] = useState(false);
   const [progress, setProgress] = useState(0);
 
+  const [currentData, setCurrentData] = useState()
+
+  const handleClickNode = (idx)=>{
+    setCurrentData(data[idx])
+  }
+
+  useEffect(()=>{
+    setCurrentData(data[0])
+  },[])
+
   return (
     <ChakraProvider>
       <div
@@ -59,14 +69,14 @@ const ProgressBar = ({ journeyList }) => {
             <>
               <Button
                 style={{ borderRadius: "50px" }}
-                key={`button${item.id}`}
+                key={`button${index}`}
                 shadow="md"
                 variantcolor="green"
                 onClick={() => {
                   // item.id === data.length
                   //   ? setProgress(100)
                   //   : setProgress((item.id / (data.length + 1)) * 100);
-                  setCurrent(item.id);
+                  handleClickNode(index);
                 }}
               >
                 {item.title}
@@ -88,9 +98,7 @@ const ProgressBar = ({ journeyList }) => {
         </ButtonGroup>
       </div>
       <Card
-        current={current}
-        data={data}
-        setData={setData}
+        current={currentData}
         setProgress={setProgress}
       />
     </ChakraProvider>
